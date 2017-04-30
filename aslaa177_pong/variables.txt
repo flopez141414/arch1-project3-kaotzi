@@ -1,0 +1,11 @@
+from graphics.ci
+const unsigned char wwinloose[2][32]
+const unsigned char wwinloose[2][32]
+const unsigned char score[15] 
+const unsigned char player1[10]
+const unsigned char player2[10]
+const unsigned char player1wins[96]
+const unsigned char player2wins[96]
+
+from msp430pong_screen.ci
+const unsigned char msp430pong_screen[96]

@@ -1,0 +1,515 @@
+Warning[w6]: Type conflict for external/entry "freq", in module pong_game against external/entry in module main; different types
+  /* In module pong_game: */
+  unsigned int DATA0 freq;
+  /* In module main: */
+  unsigned short DATA0 freq;
+Warning[w6]: Type conflict for external/entry "play", in module score_board against external/entry in module main; different types
+  /* In module score_board: */
+  unsigned int DATA0 volatile play;
+  /* In module main: */
+  unsigned short DATA0 play;
+Warning[w6]: Type conflict for external/entry "play", in module pong_game against external/entry in module main; different types
+  /* In module pong_game: */
+  unsigned int DATA0 play;
+  /* In module main: */
+  unsigned short DATA0 play;
+Warning[w6]: Type conflict for external/entry "sde", in module pong_game against external/entry in module main; different types
+  /* In module pong_game: */
+  unsigned int DATA0 sde;
+  /* In module main: */
+  unsigned short DATA0 sde;
+################################################################################
+#                                                                              #
+#      IAR Universal Linker V4.53I/WIN                                         #
+#                                                                              #
+#           Link time     =  14/Apr/2003  10:51:52                             #
+#           Target CPU    =  MSP430                                            #
+#           List file     =  "C:\WINDOWS\Desktop\Pong\Pong Final 4-11\Debug\Li #
+#                            st\NTSC_pong.map"                                 #
+#           Output file 1 =  "C:\WINDOWS\Desktop\Pong\Pong Final 4-11\Debug\Ex #
+#                            e\NTSC_pong.d43"                                  #
+#                            Format: debug                                     #
+#                            UBROF version 6.0.0                               #
+#                            Using library modules for C-SPY (-r)              #
+#           Command line  =  "C:\WINDOWS\Desktop\Pong\Pong Final 4-11\Debug\Ob #
+#                            j\main.r43"                                       #
+#                            "C:\WINDOWS\Desktop\Pong\Pong Final 4-11\Debug\Ob #
+#                            j\NTSC.r43"                                       #
+#                            "C:\WINDOWS\Desktop\Pong\Pong Final 4-11\Debug\Ob #
+#                            j\pong_game.r43"                                  #
+#                            "C:\WINDOWS\Desktop\Pong\Pong Final 4-11\Debug\Ob #
+#                            j\score_board.r43"                                #
+#                            -o                                                #
+#                            "C:\WINDOWS\Desktop\Pong\Pong Final 4-11\Debug\Ex #
+#                            e\NTSC_pong.d43"                                  #
+#                            -r -B -l                                          #
+#                            "C:\WINDOWS\Desktop\Pong\Pong Final 4-11\Debug\Li #
+#                            st\NTSC_pong.map"                                 #
+#                            -xms -IC:\IAR\EW23\430\LIB\ -f                    #
+#                            C:\IAR\EW23\430\icc430\msp430f1121c.xcl           #
+#                            (-cMSP430 -Z(DATA)UDATA0,IDATA0,ECSTR=0200-02FF   #
+#                            -Z(DATA)CSTACK#0200-0300 -Z(CODE)INFO=1000-10FF   #
+#                            -Z(CODE)CODE,CONST,CSTR,CDATA0,CCSTR=F000-FFDF    #
+#                            -Z(CODE)INTVEC=FFE0-FFFF                          #
+#                            -e_small_write=_formatted_write                   #
+#                            -e_medium_read=_formatted_read cl430ks.r43)       #
+#                                                                              #
+#                        Copyright 1987-2002 IAR Systems. All rights reserved. #
+################################################################################
+
+
+
+
+
+                ****************************************
+                *                                      *
+                *           CROSS REFERENCE            *
+                *                                      *
+                ****************************************
+
+       Program entry at :           F7F2  Relocatable, from module : CSTARTUP
+
+
+
+
+                ****************************************
+                *                                      *
+                *              MODULE MAP              *
+                *                                      *
+                ****************************************
+
+
+  FILE NAME : C:\WINDOWS\Desktop\Pong\Pong Final 4-11\Debug\Obj\main.r43
+  PROGRAM MODULE, NAME : main
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: F000 - F0D7 (d8 bytes), align: 1
+  Segment part 0. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           main                    F000            Segment part 7 (CSTARTUP)
+               calls direct
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           ?0002                   F02A 
+           ?0000                   F040 
+           ?0004                   F06A 
+           ?0005                   F06E 
+           ?0003                   F076 
+           ?0008                   F076 
+           ?0009                   F07C 
+           ?0011                   F07E 
+           ?0012                   F084 
+           ?0010                   F092 
+           ?0015                   F096 
+           ?0016                   F09A 
+           ?0020                   F0BA 
+           ?0021                   F0BA 
+           ?0018                   F0BA 
+           ?0019                   F0BC 
+           ?0014                   F0C0 
+           ?0023                   F0C4 
+           ?0024                   F0C8 
+           ?0022                   F0D0 
+           ?0007                   F0D6 
+    -------------------------------------------------------------------------
+CONST
+  Relative segment, address: F8BA - F919 (60 bytes), align: 1
+  Segment part 4. ROOT.       Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           msp430pong_screen       F8BA 
+    -------------------------------------------------------------------------
+UDATA0
+  Relative segment, address: 0200 - 0269 (6a bytes), align: 1
+  Segment part 10. ROOT.      Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           freq                    0262            bing (pong_game)
+                                                   note (score_board)
+                                                   ta0Int (ta0Int)
+           line                    0268            ta0Int (ta0Int)
+           play                    0264            bing (pong_game)
+                                                   note (score_board)
+                                                   ta0Int (ta0Int)
+           sde                     0266            bing (pong_game)
+                                                   note (score_board)
+                                                   ta0Int (ta0Int)
+           state                   0260            ta0Int (ta0Int)
+           videomem                0200            bing (pong_game)
+                                                   note (score_board)
+                                                   ta0Int (ta0Int)
+
+    *************************************************************************
+
+  FILE NAME : C:\WINDOWS\Desktop\Pong\Pong Final 4-11\Debug\Obj\NTSC.r43
+  PROGRAM MODULE, NAME : ta0Int
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: F0D8 - F34F (278 bytes), align: 1
+  Segment part 0. ROOT.       Intra module refs:   Segment part 1
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ta0Int                  F0E0 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           hold                    F0D8 
+           L_A                     F158 
+           L_B                     F178 
+           L_C                     F1A2 
+           L_D                     F1E0 
+           BLANKLINES              F292 
+           LINES                   F2BC 
+           L_G                     F234 
+           L_F                     F25C 
+           eol                     F326 
+           L_E                     F1FE 
+           ta0s1                   F2F0 
+           ta0s2                   F2FC 
+           pl                      F33A 
+           er                      F34E 
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: FFE0 - FFF3 (14 bytes), align: 1
+  Segment part 1. ROOT.
+
+    *************************************************************************
+
+  FILE NAME : C:\WINDOWS\Desktop\Pong\Pong Final 4-11\Debug\Obj\pong_game.r43
+  PROGRAM MODULE, NAME : pong_game
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: F350 - F5AF (260 bytes), align: 1
+  Segment part 0. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           bing                    F5A0 
+           pong_game               F350            main (main)
+               calls direct
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           ?0001                   F38E 
+           ?0002                   F392 
+           ?0000                   F39A 
+           ?0006                   F3BE 
+           ?0007                   F3CE 
+           ?0008                   F3D4 
+           ?0009                   F3D8 
+           ?0010                   F3DE 
+           ?0011                   F3EA 
+           ?0012                   F3EC 
+           ?0013                   F3F0 
+           ?0014                   F3F2 
+           ?0015                   F3F6 
+           ?0016                   F3F8 
+           ?0017                   F3FE 
+           ?0018                   F402 
+           ?0019                   F406 
+           ?0020                   F408 
+           ?0021                   F40E 
+           ?0022                   F412 
+           ?0024                   F446 
+           ?0025                   F44A 
+           ?0030                   F458 
+           ?0029                   F458 
+           ?0027                   F458 
+           ?0028                   F466 
+           ?0031                   F472 
+           ?0035                   F480 
+           ?0034                   F480 
+           ?0032                   F480 
+           ?0033                   F48C 
+           ?0036                   F498 
+           ?0023                   F49C 
+           ?0040                   F4A4 
+           ?0039                   F4A4 
+           ?0037                   F4A4 
+           ?0041                   F4B4 
+           ?0042                   F4C0 
+           ?0038                   F4C2 
+           ?0044                   F4CC 
+           ?0048                   F4EA 
+           ?0049                   F4EA 
+           ?0046                   F4EA 
+           ?0047                   F4F4 
+           ?0053                   F506 
+           ?0052                   F506 
+           ?0050                   F506 
+           ?0051                   F512 
+           ?0054                   F516 
+           ?0055                   F51A 
+           ?0059                   F52E 
+           ?0058                   F52E 
+           ?0056                   F52E 
+           ?0057                   F53C 
+           ?0060                   F542 
+           ?0061                   F546 
+           ?0065                   F54E 
+           ?0064                   F54E 
+           ?0062                   F54E 
+           ?0063                   F552 
+           ?0045                   F552 
+           ?0043                   F552 
+           ?0004                   F582 
+
+    *************************************************************************
+
+  FILE NAME : C:\WINDOWS\Desktop\Pong\Pong Final 4-11\Debug\Obj\score_board.r43
+  PROGRAM MODULE, NAME : score_board
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: F5B0 - F7F1 (242 bytes), align: 1
+  Segment part 0. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           note                    F7E2 
+           score_board             F5B0            bing (pong_game)
+               calls direct
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           ?0000                   F5B6 
+           ?0001                   F5BA 
+           ?0002                   F5BE 
+           ?0003                   F5C2 
+           ?0005                   F5C6 
+           ?0006                   F5CA 
+           ?0004                   F5D2 
+           ?0009                   F5D4 
+           ?0010                   F5DA 
+           ?0008                   F620 
+           ?0013                   F622 
+           ?0014                   F628 
+           ?0012                   F654 
+           ?0017                   F656 
+           ?0018                   F65C 
+           ?0016                   F688 
+           ?0021                   F68A 
+           ?0022                   F690 
+           ?0020                   F6B2 
+           ?0025                   F6B4 
+           ?0026                   F6BA 
+           ?0024                   F6DC 
+           ?0029                   F6DE 
+           ?0030                   F6E4 
+           ?0034                   F6F4 
+           ?0033                   F6F4 
+           ?0031                   F6F4 
+           ?0036                   F6F6 
+           ?0037                   F6FC 
+           ?0035                   F71C 
+           ?0041                   F738 
+           ?0042                   F738 
+           ?0039                   F738 
+           ?0040                   F73A 
+           ?0032                   F73A 
+           ?0064                   F742 
+           ?0065                   F746 
+           ?0066                   F748 
+           ?0061                   F750 
+           ?0062                   F754 
+           ?0063                   F756 
+           ?0043                   F75A 
+           ?0046                   F75C 
+           ?0047                   F762 
+           ?0045                   F782 
+           ?0051                   F79E 
+           ?0052                   F79E 
+           ?0049                   F79E 
+           ?0050                   F7A0 
+           ?0044                   F7A0 
+           ?0056                   F7AC 
+           ?0055                   F7AC 
+           ?0053                   F7AC 
+           ?0054                   F7BA 
+           ?0059                   F7DA 
+           ?0060                   F7DA 
+           ?0057                   F7DA 
+           ?0058                   F7DC 
+           ?0028                   F7DE 
+    -------------------------------------------------------------------------
+CONST
+  Relative segment, address: F91A - FA63 (14a bytes), align: 1
+  Segment part 4. ROOT.       Intra module refs:   note
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           number                  F95A 
+           player1                 F981 
+           player1wins             F995 
+           player2                 F98B 
+           player2wins             F9F5 
+           score                   F972 
+           song                    FA56 
+           wwinloose               F91A 
+    -------------------------------------------------------------------------
+UDATA0
+  Relative segment, address: 026A - 026D (4 bytes), align: 1
+  Segment part 10. ROOT.      Intra module refs:   note
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           score1                  026A 
+           score2                  026C 
+
+    *************************************************************************
+
+  FILE NAME : C:\IAR\EW23\430\LIB\cl430ks.r43
+  PROGRAM MODULE, NAME : CSTARTUP
+
+  SEGMENTS IN THE MODULE
+  ======================
+CSTACK
+  Relative segment, address: 0300, align: 1
+  Segment part 0. ROOT.
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: FFE0 - FFFF (20 bytes), align: 1
+  Segment part 1. ROOT.
+    -------------------------------------------------------------------------
+UDATA0
+  Relative segment, address: 026E, align: 1
+  Segment part 2. ROOT.
+    -------------------------------------------------------------------------
+IDATA0
+  Relative segment, address: 026E, align: 1
+  Segment part 3. ROOT.
+    -------------------------------------------------------------------------
+CDATA0
+  Relative segment, address: FA64, align: 1
+  Segment part 4. ROOT.
+    -------------------------------------------------------------------------
+CCSTR
+  Relative segment, address: FA64, align: 1
+  Segment part 5. ROOT.
+    -------------------------------------------------------------------------
+ECSTR
+  Relative segment, address: 026E, align: 1
+  Segment part 6. ROOT.
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: F7F2 - F835 (44 bytes), align: 1
+  Segment part 7. ROOT.       Intra module refs:   Segment part 1
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : lowinit
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: F836 - F839 (4 bytes), align: 1
+  Segment part 0. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __low_level_init        F836            Segment part 7 (CSTARTUP)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : exit
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: F83A - F83D (4 bytes), align: 1
+  Segment part 0. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           exit                    F83A 
+           ?C_EXIT                 F83A            Segment part 7 (CSTARTUP)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?S_MUL_L02
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: F83E - F86D (30 bytes), align: 1
+  Segment part 0. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?C_MUL_L02              F83E 
+           ?S_MUL_L02              F846            note (score_board)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?US_SHR_L02
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: F86E - F87F (12 bytes), align: 1
+  Segment part 0. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?UC_SHR_L02             F86E            bing (pong_game)
+           ?US_SHR_L02             F872 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : l08
+
+Absolute parts
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?CL430_1_26_L08         0001 
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?memcpy
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: F880 - F89D (1e bytes), align: 1
+  Segment part 0. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           memcpy                  F880            Segment part 7 (CSTARTUP)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?memset
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: F89E - F8B9 (1c bytes), align: 1
+  Segment part 0. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           memset                  F89E            Segment part 7 (CSTARTUP)
+
+
+
+
+                ****************************************
+                *                                      *
+                *      SEGMENTS IN ADDRESS ORDER       *
+                *                                      *
+                ****************************************
+
+
+SEGMENT              SPACE   START ADDRESS    END ADDRESS      SIZE  TYPE  ALIGN
+=======              =====   =============    ===========      ====  ====  =====
+UDATA0                                0200 - 026D                6E   rel    1
+ECSTR                                    026E                         rel    1
+IDATA0                                   026E                         rel    1
+CSTACK                                   0300                         rel    1
+CODE                                  F000 - F8B9               8BA   rel    1
+CONST                                 F8BA - FA63               1AA   rel    1
+CDATA0                                   FA64                         rel    1
+CCSTR                                    FA64                         rel    1
+CSTR                                     FA64                         dse    0
+INTVEC                                FFE0 - FFFF                20   com    1
+
+                ****************************************
+                *                                      *
+                *        END OF CROSS REFERENCE        *
+                *                                      *
+                ****************************************
+
+ 2 692 bytes of CODE memory
+   110 bytes of DATA memory
+
+Errors: none
+Warnings: 4
+
