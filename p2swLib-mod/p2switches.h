@@ -6,6 +6,6 @@
 unsigned int p2sw_read();
 void p2sw_init(unsigned char mask);
 unsigned int p1sw_read();
-void p1sw_init(unsigned char mask);
+void p1sw_init();
 
 #endif // included

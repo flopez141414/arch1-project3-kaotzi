@@ -38,13 +38,13 @@ p2sw_init(unsigned char mask)
 }
 
 void
-p1sw_init(unsigned char mask)
+p1sw_init()
 {
-  switch_mask5 = mask;
-  P1REN |= mask;    /* enables resistors for switches */
-  P1IE = mask;      /* enable interrupts from switches */
-  P1OUT |= mask;    /* pull-ups for switches */
-  P1DIR &= ~mask;   /* set switches' bits for input */
+  switch_mask5 = 3;
+  P1REN |= 3;    /* enables resistors for switches */
+  P1IE = 3;      /* enable interrupts from switches */
+  P1OUT |= 3;    /* pull-ups for switches */
+  P1DIR &= ~3;   /* set switches' bits for input */
   switch_update_interrupt_sense_sw5();
 }
 /* Returns a word where:
