@@ -54,6 +54,14 @@ p2sw_read() {
   return switches_current | (sw_changed << 8);
 }
 
+void
+switch5_interrupt_handler()
+{
+    char lowsw= switch_update_interrupt_sense_sw5();
+    if (lowsw = 0)
+     {drawString5x7(20,20, "BUTTON 5 DETECTED!" , COLOR_RED, COLOR_GREEN);}
+}  
+
 /* Switch on P2 (S1) */
 void
 __interrupt_vec(PORT2_VECTOR) Port_2(){
@@ -72,11 +80,5 @@ __interrupt_vec(PORT1_VECTOR) Port_1(){
   }
 }
 
-void
-switch5_interrupt_handler()
-{
-    char lowsw= switch_update_interrupt_sense_sw5();
-    if (lowsw = 0)
-     {drawString5x7(20,20, "BUTTON 5 DETECTED!" , COLOR_RED, COLOR_GREEN);}
-}  
+
 
