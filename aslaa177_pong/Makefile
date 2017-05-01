@@ -10,7 +10,7 @@ AS              = msp430-elf-gcc -mmcu=${CPU} -c
 all:pongTI.elf
 
 #additional rules for files
-pongTI.elf: ${COMMON_OBJECTS} pongTI.o ponggame.o scoreboard.o wdt_handler.o
+pongTI.elf: ${COMMON_OBJECTS} main.o ponggame.o scoreboard.o wdt_handler.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd -lShape -lCircle -lp2sw
 
 load: pongTI.elf
@@ -18,3 +18,4 @@ load: pongTI.elf
 
 clean:
 	rm -f *.o *.elf
+
