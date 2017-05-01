@@ -3,16 +3,16 @@
 #include <msp430.h>
 //Character file for the start up screen
 #include "msp430pong_screen.ci"
-#include "pong_game.h"
+#include "ponggame.h"
 
 
 unsigned char videomem[24*4];   //32x24 pixels => 32/8*24 bytes
 
 volatile unsigned int state; 
-unsigned short freq;
-unsigned short play;
-unsigned short sde;
-unsigned short line;
+unsigned int freq;
+unsigned int play;
+unsigned int sde;
+unsigned int line;
 
 
 
@@ -84,6 +84,6 @@ int main (void)
 	    LPM0;
 	}
        
-       pong_game();
+       ponggame();
     }
 }
