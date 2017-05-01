@@ -4,7 +4,7 @@
 //Character file for the start up screen
 #include "msp430pong_screen.ci"
 #include "ponggame.h"
-
+#include "scoreboard.h"
 
 unsigned char videomem[24*4];   //32x24 pixels => 32/8*24 bytes
 
@@ -74,14 +74,14 @@ int main (void)
 	for( y = 5000;y ; y-- )
 	{
 	    //LPM0 places MSP430 standby until the vertical pulse intrupts
-                drawboard(&videomem};		/**< send data */
+                drawboard(&videomem);		/**< send data */
 	    if( (~P2IN & FIRE) != 0 || (~P2IN & FIRE) != 0 ) break;
 	}
         
         //Prolong startup screen after 1st game is played
         for( y = 50;y ; y-- )
 	{
-                drawboard(&videomem};		/**< send data */
+                drawboard(&videomem);		/**< send data */
 	}
        
        ponggame();
