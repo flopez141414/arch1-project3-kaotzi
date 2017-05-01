@@ -3,6 +3,7 @@
 #include <msp430.h>
 #include "ponggame.h"
 #include "scoreboard.h"
+#include "lcdutils.h"
 
 void ponggame( void ) 
 {

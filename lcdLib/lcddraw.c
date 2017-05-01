@@ -111,11 +111,11 @@ void drawChar8x12(u_char rcol, u_char rrow, char c,
     while (row < 12) {
       u_int colorBGR = (font_8x12[oc][col] & bit) ? fgColorBGR : bgColorBGR;
       lcd_writeColor(colorBGR);
-      col++;
+      row++;
     }
-    col = 0;
+    row = 0;
     bit <<= 1;
-    row++;
+    col++;
   }
 }
 

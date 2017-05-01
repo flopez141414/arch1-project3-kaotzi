@@ -1,6 +1,7 @@
 //Score Screen Code
 
 #include <msp430.h>
+#include "lcdutils.h"
 #include "graphics.ci"
 
 #include "ponggame.h"

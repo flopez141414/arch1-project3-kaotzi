@@ -18,6 +18,7 @@ unsigned int line;
 
 int main (void) 
 {
+    setUpSPIforLCD()
     int i;
     WDTCTL = WDTPW + WDTHOLD;  // Stop watchdog timer
     

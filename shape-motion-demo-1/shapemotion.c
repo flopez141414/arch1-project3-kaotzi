@@ -31,6 +31,7 @@ Layer layer4 = {
   {0,0}, {0,0},				    /* last & next pos */
   COLOR_PINK,
   0
+  
 };
   
 
@@ -166,7 +167,7 @@ void main()
   lcd_init();
   shapeInit();
   p2sw_init(1);
-
+   drawString5x7(20,20, "PONG", COLOR_RED, COLOR_BLUE);
   shapeInit();
 
   layerInit(&layer0);
