@@ -3,7 +3,8 @@
 #include "lcddraw.h"
 #include "shape.h"
 
-const AbRect rect10 = {abRectGetBounds, abRectCheck, 10,10};;
+const AbRect rect10 = {abRectGetBounds, abRectCheck, 60,10};; //makes horizontal banner across most of the screen
+const AbRect rect5 = {abRectGetBounds, abRectCheck, 5,25};; //makes horizontal banner across most of the screen
 
 void
 abDrawPos(AbShape *shape, Vec2 *shapeCenter, u_int fg_color, u_int bg_color)
@@ -34,11 +35,20 @@ main()
   Vec2 rectPos = screenCenter;
 
   clearScreen(COLOR_BLUE);
-  drawString5x7(20,20, "hello", COLOR_GREEN, COLOR_RED);
+  drawString5x7(20,40, "Testing my Pong", COLOR_GREEN, COLOR_BLUE);
   shapeInit();
   
   abDrawPos((AbShape*)&rect10, &rectPos, COLOR_ORANGE, COLOR_BLUE);
-
+  drawString5x7(20,75, "Pong is Tested", COLOR_BLACK, COLOR_ORANGE);
+  shapeInit();
+  
+  abDrawPos((AbShape*)&rect5, &rectPos, COLOR_YELLOW, COLOR_BLUE);
+  drawString5x7(5,150, "SW1-up", COLOR_BLACK, COLOR_BLUE);
+  drawString5x7(18,150, "SW1-start", COLOR_BLACK, COLOR_BLUE);
+  drawString5x7(35,150, "SW1-ball", COLOR_BLACK, COLOR_BLUE);
+  drawString5x7(52,150, "SW4-down", COLOR_BLACK, COLOR_BLUE);
+  drawString5x7(5,5,"Score: ", COLOR_WHITE, COLOR-BLUE);
+  
 }
 
 
