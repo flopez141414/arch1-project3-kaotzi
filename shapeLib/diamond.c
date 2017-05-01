@@ -31,7 +31,7 @@ void
 abDiamondGetBounds(const AbDiamond *diamond, const Vec2 *centerPos, Region *bounds)
 {
   int size = diamond->size, halfSize = size / 2;
-  bounds->topLeft.axes[0] = centerPos->axes[0] - Size;
+  bounds->topLeft.axes[0] = centerPos->axes[0] - size;
   bounds->topLeft.axes[1] = centerPos->axes[1] - halfSize;
   bounds->botRight.axes[0] = centerPos->axes[0];
   bounds->botRight.axes[1] = centerPos->axes[1] + halfSize;
