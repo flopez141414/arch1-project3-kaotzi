@@ -10,7 +10,7 @@ unsigned char videomem[24*4];   //32x24 pixels => 32/8*24 bytes
 
 volatile unsigned int state; 
 unsigned int freq;
-unsigned int play;
+volatile unsigned int play;
 unsigned int sde;
 unsigned int line;
 

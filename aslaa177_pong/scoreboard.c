@@ -4,16 +4,13 @@
 #include "graphics.ci"
 
 #include "ponggame.h"
+#include "scoreboard.h"
 
-extern unsigned char videomem[24*4];
 
 //Keeps track of players scores
 unsigned int score1;
 unsigned int score2;
 
-extern unsigned int freq;
-extern unsigned int sde;
-extern unsigned volatile int play;
 
 const unsigned int song[] = {
 	4,
@@ -25,7 +22,7 @@ const unsigned int song[] = {
 	4
 };
 
-void note( unsigned int fr );
+
 
 void scoreboard( int player ) {
 	int y;

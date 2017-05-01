@@ -5,7 +5,7 @@
 extern unsigned char videomem[24*4];
 extern unsigned int freq;
 extern unsigned int sde;
-extern unsigned int play;
+extern volatile unsigned int play;
 
 //Controler setup to associated port pins 
 
@@ -30,3 +30,5 @@ void ponggame( void );
 void scoreboard( int player );
 //function to play tone at collision
 void bing( unsigned int fr );
+
+#endif // included
