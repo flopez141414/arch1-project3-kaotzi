@@ -1,5 +1,5 @@
 #include <msp430.h>
-#include "switches.h"
+#include "switches3.h"
 
 // SWITCHES at P2.0 : P2.1 
 
