@@ -84,7 +84,7 @@ void scoreboard( int player ) {
 		        score1 = score2 = 0;
 		        LPM0;
 		     }
-		     if( (~P2IN & FIRE1) != 0 || (~P2IN & FIRE2) != 0 ) break;
+		     if( (~P2IN & FIRE) != 0) break;
 		} 
 				
 		//P2OUT = 0;
@@ -98,7 +98,7 @@ void scoreboard( int player ) {
 		        score1 = score2 = 0;
 		        LPM0;
 	             }
-	             if( (~P2IN & FIRE1) != 0 || (~P2IN & FIRE2) != 0 ) break;
+	             if( (~P2IN & FIRE) != 0) break;
 		}
 		
 		//P2OUT = 0xff;
