@@ -3,11 +3,7 @@
 
 #include "msp430.h"
 
-#define SW5 BIT3           //switch5 is p1.3
-#define SWITCHLOW SW5
-
 unsigned int p2sw_read();
 void p2sw_init(unsigned char mask);
-static char switch_update_interrupt_sense_sw5();
 
 #endif // included
