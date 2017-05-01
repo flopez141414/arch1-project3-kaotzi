@@ -6,6 +6,8 @@
 //extern unsigned int sde;
 //extern unsigned volatile int play;
 
+void drawboard (unsigned char vidmem[24*4]);
+
 void note( unsigned int fr );
 
 void scoreboard( int player );

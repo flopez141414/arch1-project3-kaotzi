@@ -1,6 +1,6 @@
 //Score Screen Code
 
-#include <msp430x11x1.h>
+#include <msp430.h>
 #include "graphics.ci"
 
 #include "ponggame.h"
@@ -22,6 +22,13 @@ const unsigned int song[] = {
 	4
 };
 
+void drawboard (unsigned char *vidmem[24*4]){
+     int y;
+     for( y = 0; y<24*4; y++) 
+	{
+	   UCB0TXBUF = *vidmem[y];		/**< send data */
+	}
+};
 
 
 void scoreboard( int player ) {
@@ -79,11 +86,10 @@ void scoreboard( int player ) {
 		if(score1 == 3 && score2 < 3 ){
 		    for( y = 0; y<24*4; y++) 
 	             {
-		        LPM0;
+                drawboard(&videomem};		/**< send data */
 		        videomem[y] = player1wins[y];
 		        score1 = score2 = 0;
-                LCD_DC_HI();			/**< specify sending data */
-                UCB0TXBUF = videomem;		/**< send data */
+                drawboard(&videomem};		/**< send data */
 		     }
 		     if( (~P2IN & FIRE) != 0) break;
 		} 
@@ -94,11 +100,10 @@ void scoreboard( int player ) {
 		if(score2 == 3 & score1 <3){
 		    for( y = 0; y<24*4; y++) 
 	             {
-		        LPM0;
+                drawboard(&videomem};		/**< send data */
 		        videomem[y] = player2wins[y];
 		        score1 = score2 = 0;
-                LCD_DC_HI();			/**< specify sending data */
-                UCB0TXBUF = videomem;		/**< send data */
+                drawboard(&videomem};		/**< send data */
 	             }
 	             if( (~P2IN & FIRE) != 0) break;
 		}
@@ -110,8 +115,7 @@ void scoreboard( int player ) {
 			
 		}
 		
-        LCD_DC_HI();			/**< specify sending data */
-        UCB0TXBUF = videomem;		/**< send data */
+                drawboard(&videomem};		/**< send data */
 		if( (~P2IN & FIRE) != 0 ) break;
         }	
 }

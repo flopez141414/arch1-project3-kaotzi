@@ -74,15 +74,14 @@ int main (void)
 	for( y = 5000;y ; y-- )
 	{
 	    //LPM0 places MSP430 standby until the vertical pulse intrupts
-	    LPM0;                           
+                drawboard(&videomem};		/**< send data */
 	    if( (~P2IN & FIRE) != 0 || (~P2IN & FIRE) != 0 ) break;
 	}
         
         //Prolong startup screen after 1st game is played
         for( y = 50;y ; y-- )
 	{
-       LCD_DC_HI();			/**< specify sending data */
-       UCB0TXBUF = videomem;		/**< send data */
+                drawboard(&videomem};		/**< send data */
 	}
        
        ponggame();
