@@ -121,6 +121,29 @@ void abRArrowGetBounds(const AbRArrow *arrow, const Vec2 *centerPos, Region *bou
  */
 int abRArrowCheck(const AbRArrow *arrow, const Vec2 *centerPos, const Vec2 *pixel);
 
+
+
+/** An AbShape square diamond
+ *
+ *  size: width of the diamond.  
+ *  The "centerPos is at the diamond's right tip.
+ */
+typedef struct AbDiamond_s {
+  void (*getBounds)(const struct AbDiamond_s *shape, const Vec2 *centerPos, Region *bounds);
+  int (*check)(const struct AbDiamond_s *shape, const Vec2 *centerPos, const Vec2 *pixelLoc);
+  int size;
+} AbDiamond;
+
+
+/** As required by AbShape
+ */
+void abDiamondGetBounds(const AbDiamond *diamond, const Vec2 *centerPos, Region *bounds);
+
+/** As required by AbShape
+ */
+int abDiamondCheck(const AbDiamond *diamond, const Vec2 *centerPos, const Vec2 *pixel);
+
+
 /** AbShape rectangle
  *
  *  Vector halfSize must be to first quadrant (both axes non-negative).  

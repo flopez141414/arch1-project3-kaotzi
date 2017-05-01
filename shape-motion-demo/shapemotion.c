@@ -18,7 +18,7 @@
 
 
 AbRect rect10 = {abRectGetBounds, abRectCheck, {10,10}}; /**< 10x10 rectangle */
-AbRArrow rightArrow = {abRArrowGetBounds, abRArrowCheck, 30};
+AbDiamond diamond = {abDiamondGetBounds, abDiamondCheck, 30};
 
 AbRectOutline fieldOutline = {	/* playing field */
   abRectOutlineGetBounds, abRectOutlineCheck,   
@@ -26,7 +26,7 @@ AbRectOutline fieldOutline = {	/* playing field */
 };
 
 Layer layer4 = {
-  (AbShape *)&rightArrow,
+  (AbShape *)&diamond,
   {(screenWidth/2)+10, (screenHeight/2)+5}, /**< bit below & right of center */
   {0,0}, {0,0},				    /* last & next pos */
   COLOR_PINK,
