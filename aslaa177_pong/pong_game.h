@@ -24,6 +24,8 @@ extern unsigned int play;
 
 #define PADDLEHEIGHT 5
 
+void pong_game( void );
+
 //Function to set score frame
 void score_board( int player );
 //function to play tone at collision

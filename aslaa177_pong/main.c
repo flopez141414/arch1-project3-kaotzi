@@ -1,11 +1,10 @@
 //main.c
 
-//#include <msp430x11x1.h>
 #include <msp430.h>
 //Character file for the start up screen
 #include "msp430pong_screen.ci"
+#include "pong_game.h"
 
-void pong_game( void );
 
 unsigned char videomem[24*4];   //32x24 pixels => 32/8*24 bytes
 
@@ -15,16 +14,7 @@ unsigned short play;
 unsigned short sde;
 unsigned short line;
 
-//Controler setup to associated port pins 
-//Controler 1
-//#define FIRE1		0x20      //P2.5
-#define UP1	        BIT0      //P2.0
-#define DOWN1		BIT1      //P2.1
 
-//Controler 2 
-//#define FIRE2		0x10      //P2.4
-#define UP2	        BIT3      //P2.3
-#define DOWN2		BIT2      //P2.2
 
 int main (void) 
 {
@@ -85,7 +75,7 @@ int main (void)
 	{
 	    //LPM0 places MSP430 standby until the vertical pulse intrupts
 	    LPM0;                           
-	    if( (~P2IN & FIRE1) != 0 || (~P2IN & FIRE2) != 0 ) break;
+	    if( (~P2IN & FIRE) != 0 || (~P2IN & FIRE) != 0 ) break;
 	}
         
         //Prolong startup screen after 1st game is played
