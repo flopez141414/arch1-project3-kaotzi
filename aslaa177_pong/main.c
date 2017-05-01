@@ -23,11 +23,11 @@ int main (void)
     
     //Setup ports P1 & P2  
     //Define output registers of port P1 
-    P1OUT  = BIT0|BIT1;        // Init Output data of port1           
+    P1OUT  = BIT0|BIT6;        // Init Output data of port1  -- leds         
     
     //Define the direction of pins on port P1 & P2      
-    P1DIR  = 0XFF;             // All pins on port P1 are in output direction       
-    P2DIR  = 0xC0;             // Set Pins Port2 Data-Direction (Out=1 / Inp=0)       
+    P1DIR &= ~SWITCHLOW;		/* set switch5's bits for input */
+    P2DIR &= ~SWITCHES;	    	/* set switches' bits for input */
     
     //Selection of pins of port P1 to be used by TimerA    
     P1SEL = BIT1|BIT2;                     

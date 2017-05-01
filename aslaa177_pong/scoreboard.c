@@ -109,7 +109,7 @@ void scoreboard( int player ) {
 		}
 		
 		LPM0;
-		if( (~P2IN & FIRE1) != 0 || (~P2IN & FIRE2) != 0 ) break;
+		if( (~P2IN & FIRE) != 0 ) break;
         }	
 }
 
