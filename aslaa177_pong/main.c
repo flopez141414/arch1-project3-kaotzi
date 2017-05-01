@@ -81,7 +81,8 @@ int main (void)
         //Prolong startup screen after 1st game is played
         for( y = 50;y ; y-- )
 	{
-	    LPM0;
+       LCD_DC_HI();			/**< specify sending data */
+       UCB0TXBUF = videomem;		/**< send data */
 	}
        
        ponggame();

@@ -82,7 +82,8 @@ void scoreboard( int player ) {
 		        LPM0;
 		        videomem[y] = player1wins[y];
 		        score1 = score2 = 0;
-		        LPM0;
+                LCD_DC_HI();			/**< specify sending data */
+                UCB0TXBUF = videomem;		/**< send data */
 		     }
 		     if( (~P2IN & FIRE) != 0) break;
 		} 
@@ -96,7 +97,8 @@ void scoreboard( int player ) {
 		        LPM0;
 		        videomem[y] = player2wins[y];
 		        score1 = score2 = 0;
-		        LPM0;
+                LCD_DC_HI();			/**< specify sending data */
+                UCB0TXBUF = videomem;		/**< send data */
 	             }
 	             if( (~P2IN & FIRE) != 0) break;
 		}
@@ -108,7 +110,8 @@ void scoreboard( int player ) {
 			
 		}
 		
-		LPM0;
+        LCD_DC_HI();			/**< specify sending data */
+        UCB0TXBUF = videomem;		/**< send data */
 		if( (~P2IN & FIRE) != 0 ) break;
         }	
 }

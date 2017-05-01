@@ -34,10 +34,10 @@ switch_init()			/* setup switch */
   P2OUT |= SWITCHES;		/* pull-ups for switches */
   P2DIR &= ~SWITCHES;		/* set switches' bits for input */
   switch_update_interrupt_sense();
-  P1REN |= SWITCHES;		/* enables resistors for switch5 */
-  P1IE = SWITCHES;		/* enable interrupts from switch5 */
-  P1OUT |= SWITCHES;		/* pull-ups for switch5 */
-  P1DIR &= ~SWITCHES;		/* set switch5's bits for input */
+  P1REN |= SWITCHLOW;		/* enables resistors for switch5 */
+  P1IE = SWITCHLOW;		/* enable interrupts from switch5 */
+  P1OUT |= SWITCHLOW;		/* pull-ups for switch5 */
+  P1DIR &= ~SWITCHLOW;		/* set switch5's bits for input */
   switch_update_interrupt_sense_sw5();
   switch_interrupt_handler();	/* to initially read the switches */
 }

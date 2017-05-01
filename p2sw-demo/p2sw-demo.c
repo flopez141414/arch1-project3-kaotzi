@@ -28,4 +28,5 @@ void main()
     str[4] = 0;
     drawString5x7(20,20, str, COLOR_GREEN, COLOR_BLUE);
   } 
+  drawString5x7(30,10, "PONG", COLOR_CYAN,COLOR_RED);
 }

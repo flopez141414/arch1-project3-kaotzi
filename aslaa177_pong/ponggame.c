@@ -12,7 +12,7 @@ void ponggame( void )
 	int leaveout = 0;
 	int winner = -1;
 	int lastdir = 1;
-       	int p1 = y-PADDLEHEIGHT/2;
+    int p1 = y-PADDLEHEIGHT/2;
 	int p2 = 14;
 
 	//blackout screen
@@ -23,7 +23,9 @@ void ponggame( void )
 	videomem[92] = videomem[93] = videomem[94] = videomem[95] = 0xff;
 
 	do {
-		LPM0;		//vsync
+		LCD_DC_HI();			/**< specify sending data */
+        UCB0TXBUF = videomem;		/**< send data */
+	//vsync
 
 		//scan joystick 1
 		s = ~P2IN;
