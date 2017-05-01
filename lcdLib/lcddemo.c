@@ -17,7 +17,7 @@ main()
   clearScreen(COLOR_BLUE);
 
   drawString5x7(20,20, "hello", COLOR_GREEN, COLOR_RED);
-  drawString8x12(40,40,"world",COLOR_DKBLUE, COLOR_YELLOW);
+  drawString8x12(40,40,"world",COLOR_BLACK, COLOR_YELLOW);
   drawString11x16(70, 70, "PONG", COLOR_MAGENTA, COLOR_SPRING_GREEN);
   fillRectangle(30,30, 60, 60, COLOR_ORANGE);
   

@@ -2,6 +2,7 @@
 
 #include <msp430.h>
 #include "ponggame.h"
+#include "scoreboard.h"
 
 void ponggame( void ) 
 {
@@ -23,8 +24,7 @@ void ponggame( void )
 	videomem[92] = videomem[93] = videomem[94] = videomem[95] = 0xff;
 
 	do {
-		LCD_DC_HI();			/**< specify sending data */
-        UCB0TXBUF = videomem;		/**< send data */
+		drawboard(&videomem);		/**< send data */
 	//vsync
 
 		//scan joystick 1
