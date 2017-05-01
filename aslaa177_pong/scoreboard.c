@@ -22,11 +22,11 @@ const unsigned int song[] = {
 	4
 };
 
-void drawboard (unsigned char *vidmem[24*4]){
+void drawboard (unsigned char *vidmem){
      int y;
      for( y = 0; y<24*4; y++) 
 	{
-	   UCB0TXBUF = *vidmem[y];		/**< send data */
+	   UCB0TXBUF = vidmem[y];		/**< send data */
 	}
 };
 
@@ -86,10 +86,10 @@ void scoreboard( int player ) {
 		if(score1 == 3 && score2 < 3 ){
 		    for( y = 0; y<24*4; y++) 
 	             {
-                drawboard(&videomem);		/**< send data */
+                drawboard(videomem);		/**< send data */
 		        videomem[y] = player1wins[y];
 		        score1 = score2 = 0;
-                drawboard(&videomem);		/**< send data */
+                drawboard(videomem);		/**< send data */
 		     }
 		     if( (~P2IN & FIRE) != 0) break;
 		} 
@@ -100,10 +100,10 @@ void scoreboard( int player ) {
 		if(score2 == 3 & score1 <3){
 		    for( y = 0; y<24*4; y++) 
 	             {
-                drawboard(&videomem);		/**< send data */
+                drawboard(videomem);		/**< send data */
 		        videomem[y] = player2wins[y];
 		        score1 = score2 = 0;
-                drawboard(&videomem);		/**< send data */
+                drawboard(videomem);		/**< send data */
 	             }
 	             if( (~P2IN & FIRE) != 0) break;
 		}
@@ -115,7 +115,7 @@ void scoreboard( int player ) {
 			
 		}
 		
-                drawboard(&videomem);		/**< send data */
+                drawboard(videomem);		/**< send data */
 		if( (~P2IN & FIRE) != 0 ) break;
         }	
 }

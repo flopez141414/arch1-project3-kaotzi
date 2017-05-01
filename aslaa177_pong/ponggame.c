@@ -24,7 +24,7 @@ void ponggame( void )
 	videomem[92] = videomem[93] = videomem[94] = videomem[95] = 0xff;
 
 	do {
-		drawboard(&videomem);		/**< send data */
+		drawboard(videomem);		/**< send data */
 	//vsync
 
 		//scan joystick 1
