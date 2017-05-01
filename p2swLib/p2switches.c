@@ -1,4 +1,6 @@
 #include <msp430.h>
+#include <lcdutils.h>
+#include <lcddraw.h>
 #include "p2switches.h"
 
 static unsigned char switch_mask;
@@ -14,7 +16,7 @@ switch_update_interrupt_sense()
   P2IES &= (switches_current | ~switch_mask); /* if switch down, sense up */
 }
 
-static char 
+char 
 switch_update_interrupt_sense_sw5()
 {
   char p1val = P1IN;
@@ -34,10 +36,10 @@ p2sw_init(unsigned char mask)
   P2DIR &= ~mask;   /* set switches' bits for input */
   switch_update_interrupt_sense();
 
-  P1REN |= SWITCHES;		/* enables resistors for switch5 */
-  P1IE = SWITCHES;		/* enable interrupts from switch5 */
-  P1OUT |= SWITCHES;		/* pull-ups for switch5 */
-  P1DIR &= ~SWITCHES;		/* set switch5's bits for input */
+  P1REN |= SWITCHLOW;		/* enables resistors for switch5 */
+  P1IE = SWITCHLOW;		/* enable interrupts from switch5 */
+  P1OUT |= SWITCHLOW;		/* pull-ups for switch5 */
+  P1DIR &= ~SWITCHLOW;		/* set switch5's bits for input */
   switch_update_interrupt_sense_sw5();
 }
 
@@ -66,6 +68,15 @@ __interrupt_vec(PORT1_VECTOR) Port_1(){
   if (P1IFG & SWITCHLOW) {	      /* did a button cause this interrupt? */
     P1IFG &= ~SWITCHLOW;		      /* clear pending sw interrupts */
     switch_update_interrupt_sense_sw5();	/* single handler for all switches --bottom board*/
+    switch5_interrupt_handler;
   }
 }
+
+void
+switch5_interrupt_handler()
+{
+    char lowsw= switch_update_interrupt_sense_sw5();
+    if (lowsw = 0)
+     {drawString5x7(20,20, "BUTTON 5 DETECTED!" , COLOR_RED, COLOR_GREEN);}
+}  
 

@@ -27,9 +27,6 @@ void main()
       str[i] = (switches & (1<<i)) ? '-' : '0'+i;
     str[4] = 0;
     drawString5x7(20,20, str, COLOR_GREEN, COLOR_BLUE);
-    char lowsw= switch_update_interrupt_sense_sw5();
-    if (lowsw = 0)
-     drawString5x7(20,20, "BUTTON 5 DETECTED!" , COLOR_RED, COLOR_BLUE);
-    
+   
   } 
 }

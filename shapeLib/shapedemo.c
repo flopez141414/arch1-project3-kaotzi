@@ -43,11 +43,11 @@ main()
   shapeInit();
   
   abDrawPos((AbShape*)&rect5, &rectPos, COLOR_YELLOW, COLOR_BLUE);
-  drawString5x7(5,150, "SW1-up", COLOR_BLACK, COLOR_BLUE);
-  drawString5x7(18,150, "SW1-start", COLOR_BLACK, COLOR_BLUE);
-  drawString5x7(35,150, "SW1-ball", COLOR_BLACK, COLOR_BLUE);
-  drawString5x7(52,150, "SW4-down", COLOR_BLACK, COLOR_BLUE);
-  drawString5x7(5,5,"Score: ", COLOR_WHITE, COLOR-BLUE);
+  drawString5x7(5,150, "SW1up", COLOR_BLACK, COLOR_BLUE);
+  drawString5x7(18,150, "SW2-Strt", COLOR_BLACK, COLOR_BLUE);
+  drawString5x7(35,150, "SW3-bl", COLOR_BLACK, COLOR_BLUE);
+  drawString5x7(52,150, "SW4-dn", COLOR_BLACK, COLOR_BLUE);
+  drawString5x7(5,5,"Score: ", COLOR_WHITE, COLOR_BLUE);
   
 }
 
