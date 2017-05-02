@@ -3,7 +3,7 @@
 #include "lcddraw.h"
 #include "shape.h"
 
-AbTTile ttile = {abTTileGetBounds, abTTileCheck, 20}; //T tile
+AbTTile ttile = {abTTileGetBounds, abTTileCheck, 80}; //T tile
 
 void
 abDrawPos(AbShape *shape, Vec2 *shapeCenter, u_int fg_color, u_int bg_color)
@@ -37,7 +37,7 @@ main()
   Vec2 t2Pos = { 120, 50 };
    */ 
   clearScreen(COLOR_BLUE);
-  drawString5x7(10,40, "Testing my Pong", COLOR_GREEN, COLOR_BLUE);
+  drawString5x7(5,15, "Testing my Pong", COLOR_GREEN, COLOR_BLUE);
   shapeInit();
   
   //line of text
@@ -49,9 +49,8 @@ main()
   
   //testing TILT
   shapeInit();
-  abDrawPos((AbShape*)&rect10, &rectPos, COLOR_ORANGE, COLOR_BLUE);
-  /*shapeInit();
   abDrawPos((AbShape*)&ttile, &tPos, COLOR_RED, COLOR_BLUE);
+  /*shapeInit();
   shapeInit();
   abDrawPos((AbShape*)&itile, &iPos, COLOR_YELLOW, COLOR_BLUE);
   shapeInit();

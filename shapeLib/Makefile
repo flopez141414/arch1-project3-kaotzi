@@ -49,11 +49,11 @@ load2: shapedemo2.elf
 
 load3: shapedemo3.elf
 	mspdebug rf2500 "prog $^"
-loadt: shapedemot.elf
+loadt: shapedemoT.elf
 	mspdebug rf2500 "prog $^"
-loadi: shapedemoi.elf
+loadi: shapedemoI.elf
 	mspdebug rf2500 "prog $^"
-loadl: shapedemol.elf
+loadl: shapedemoL.elf
 	mspdebug rf2500 "prog $^"
 loadp: shapedemoPong.elf
 	mspdebug rf2500 "prog $^"
