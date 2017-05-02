@@ -61,11 +61,12 @@ void
 switch5_interrupt_handler()
 {
     char lowsw= switch_update_interrupt_sense_sw5();
-    if (lowsw & SWITCHLOW)
+    char   switch_five_down = (p1val & SW5) ? 0 : 1; /* 0 when SW5 is up */
+    if (switch_five_down)
      {  drawString5x7(20,40, "BUTTON 5 DETECTED!" , COLOR_RED, COLOR_BLUE);
-        P1DIR |= GREEN_LED;}
+        P1OUT |= GREEN_LED;}
     else { drawString5x7(20,40, "                  " , COLOR_RED, COLOR_BLUE);
-        P1DIR |= 0;}
+        P1OUT |= 0;}
 }  
 
 /* Switch on P2 (S1) */
