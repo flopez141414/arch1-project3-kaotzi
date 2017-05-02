@@ -6,7 +6,7 @@
  *  --center is the middle of the rt side.
  */
 int 
-abTTileCheck(const TTile *ttile, const Vec2 *centerPos, const Vec2 *pixel)
+abTTileCheck(const AbTTile *ttile, const Vec2 *centerPos, const Vec2 *pixel)
 {
   Vec2 relPos;
   int row, col, within = 0;
@@ -20,7 +20,7 @@ abTTileCheck(const TTile *ttile, const Vec2 *centerPos, const Vec2 *pixel)
     if ((col <= fifthSize)||((4*fifthSize)<col<=size)) {	/* within first or last fifth of tile */
       within = 1;
      } else if ((fifthSize< col <= (2*fifthSize))||((3*fifthSize)< col <= (4*fifthSize))) {	/* within second or fourth fifth of tile */
-        within =((row >(3*tenthSize))||(row <= tenthSize))  /*not in second fifth of tile ht*/
+        within =((row >(3*tenthSize))||(row <= tenthSize));  /*not in second fifth of tile ht*/
         }else if ((2*fifthSize)<row<=(3*fifthSize)){  /* center fifth of tile*/
            within=((row >(3*tenthSize))||(row <=(-3*tenthSize)));
          }
@@ -35,7 +35,7 @@ void
 abTTileGetBounds(const AbTTile *ttile, const Vec2 *centerPos, Region *bounds)
 {
   int size = ttile->size, halfSize = size / 2;
-  bounds->topLeft.axes[0] = centerPos->axes[0] - Size;
+  bounds->topLeft.axes[0] = centerPos->axes[0] - size;
   bounds->topLeft.axes[1] = centerPos->axes[1] - halfSize;
   bounds->botRight.axes[0] = centerPos->axes[0];
   bounds->botRight.axes[1] = centerPos->axes[1] + halfSize;
@@ -61,7 +61,7 @@ abITileCheck(const AbITile *itile, const Vec2 *centerPos, const Vec2 *pixel)
     if ((col <= fifthSize)||((4*fifthSize)<col<=size)) {	/* within first or last fifth of tile */
       within = 1;
      } else if ((fifthSize< col <= (2*fifthSize))||((3*fifthSize)< col <= (4*fifthSize))) {	/* within second or fourth fifth of tile */
-        within =(tenthSize< row <= (3*tenthSize))  /*not in second fifth of tile ht*/
+        within =(tenthSize< row <= (3*tenthSize));  /*not in second fifth of tile ht*/
         }else if ((2*fifthSize)<row<=(3*fifthSize)){  /* center fifth of tile*/
            within=(row >(3*tenthSize));
          }
@@ -76,7 +76,7 @@ void
 abITileGetBounds(const AbITile *itile, const Vec2 *centerPos, Region *bounds)
 {
   int size = itile->size, halfSize = size / 2;
-  bounds->topLeft.axes[0] = centerPos->axes[0] - Size;
+  bounds->topLeft.axes[0] = centerPos->axes[0] - size;
   bounds->topLeft.axes[1] = centerPos->axes[1] - halfSize;
   bounds->botRight.axes[0] = centerPos->axes[0];
   bounds->botRight.axes[1] = centerPos->axes[1] + halfSize;
@@ -102,7 +102,7 @@ abLTileCheck(const AbLTile *ltile, const Vec2 *centerPos, const Vec2 *pixel)
       within = 1;
      } else if (fifthSize< col <= (3*fifthSize)) {	/* within second or third fifth of tile */
         within =((row >(-tenthSize))||(row <= (-3*tenthSize)))  /*not in fourth fifth of tile ht*/
-        }else if ((3*fifthSize)<col<=(4*fifthSize)){  /* fourth fifth of tile horiz*/
+        }else if ((3*fifthSize)<col<=(4*fifthSize));{  /* fourth fifth of tile horiz*/
            within=((row >(3*tenthSize))||(row <=(-3*tenthSize)));
          }
      }
@@ -116,7 +116,7 @@ void
 abLTileGetBounds(const AbLTile *ltile, const Vec2 *centerPos, Region *bounds)
 {
   int size = ltile->size, halfSize = size / 2;
-  bounds->topLeft.axes[0] = centerPos->axes[0] - Size;
+  bounds->topLeft.axes[0] = centerPos->axes[0] - size;
   bounds->topLeft.axes[1] = centerPos->axes[1] - halfSize;
   bounds->botRight.axes[0] = centerPos->axes[0];
   bounds->botRight.axes[1] = centerPos->axes[1] + halfSize;
