@@ -10,8 +10,8 @@ AS              = msp430-elf-gcc -mmcu=${CPU} -c
 all:shapemotion.elf
 
 #additional rules for files
-shapemotion.elf: ${COMMON_OBJECTS} shapemotion.o wdt_handler.o
-	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -L../lib -lTimer -lLcd -lShape -lCircle -lp2sw
+shapemotion.elf: ${COMMON_OBJECTS} shapemotion.o ../lib/libp2sw.a wdt_handler.o
+	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^  -lTimer -lLcd -lShape -lCircle 
 
 load: shapemotion.elf
 	mspdebug rf2500 "prog $^"

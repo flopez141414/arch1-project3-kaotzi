@@ -15,8 +15,8 @@ abTTileCheck(const AbTTile *ttile, const Vec2 *centerPos, const Vec2 *pixel)
   int tenthSize = size/10;
   int fifthSize = size/5;
   vec2Sub(&relPos, pixel, centerPos); /* vector from center to pixel */
-  row = relPos.axes[1]; col = -relPos.axes[0]; /* note that col is negated */
-  if ((col >= 0)||(-halfSize<= row <= halfSize)) {		/* not to right of tile or outside upper/lower bounds */
+  row = -relPos.axes[1]; col = -relPos.axes[0]; /* note that both are negated */
+  if ((col >= 0)&&(-halfSize<= row <= halfSize)) {		/* not to right of tile or outside upper/lower bounds */
     if ((col <= fifthSize)||((4*fifthSize)<col<=size)) {	/* within first or last fifth of tile */
       within = 1;
      } else if ((fifthSize< col <= (2*fifthSize))||((3*fifthSize)< col <= (4*fifthSize))) {	/* within second or fourth fifth of tile */
@@ -55,9 +55,9 @@ abITileCheck(const AbITile *itile, const Vec2 *centerPos, const Vec2 *pixel)
   int tenthSize = size/10;
   int fifthSize = size/5;
   vec2Sub(&relPos, pixel, centerPos); /* vector from center to pixel */
-  row = relPos.axes[1]; col = -relPos.axes[0]; /* note that col is negated */
+  row = -relPos.axes[1]; col = -relPos.axes[0]; /* note that both are negated */
   row = (row >= 0) ? row : -row;/* row = |row| -- I is semetric side to side*/
-   if ((col >= 0)||(-halfSize<= row <= halfSize)) {		/* not to right of tile or outside upper/lower bounds */
+   if ((col >= 0)&&(-halfSize<= row <= halfSize)) {		/* not to right of tile or outside upper/lower bounds */
     if ((col <= fifthSize)||((4*fifthSize)<col<=size)) {	/* within first or last fifth of tile */
       within = 1;
      } else if ((fifthSize< col <= (2*fifthSize))||((3*fifthSize)< col <= (4*fifthSize))) {	/* within second or fourth fifth of tile */
@@ -96,13 +96,13 @@ abLTileCheck(const AbLTile *ltile, const Vec2 *centerPos, const Vec2 *pixel)
   int tenthSize = size/10;
   int fifthSize = size/5;
   vec2Sub(&relPos, pixel, centerPos); /* vector from center to pixel */
-  row = relPos.axes[1]; col = -relPos.axes[0]; /* note that col is negated */
-  if ((col >= 0)||(-halfSize<= row <= halfSize)) {		/* not to right of tile or outside upper/lower bounds */
+  row = -relPos.axes[1]; col = -relPos.axes[0]; /* note that both are negated */
+  if ((col >= 0)&&(-halfSize<= row <= halfSize)) {		/* not to right of tile or outside upper/lower bounds */
     if ((col <= fifthSize)||((4*fifthSize)<col<=size)) {	/* within first or last fifth of tile */
       within = 1;
      } else if (fifthSize< col <= (3*fifthSize)) {	/* within second or third fifth of tile */
-        within =((row >(-tenthSize))||(row <= (-3*tenthSize)))  /*not in fourth fifth of tile ht*/
-        }else if ((3*fifthSize)<col<=(4*fifthSize));{  /* fourth fifth of tile horiz*/
+        within =((row >(-tenthSize))||(row <= (-3*tenthSize)));  /*not in fourth fifth of tile ht*/
+        }else if ((3*fifthSize)<col<=(4*fifthSize)){  /* fourth fifth of tile horiz*/
            within=((row >(3*tenthSize))||(row <=(-3*tenthSize)));
          }
      }

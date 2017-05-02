@@ -32,11 +32,11 @@ Layer layer4 = {
   COLOR_PINK,
   0
 };
-  (AbShape *) &fieldOutline,
-  {screenWidth/2, screenHeight/2},/**< center */
-  {0,0}, {0,0},				    /* last & next pos */
+ /* (AbShape *) &fieldOutline,
+  {screenWidth/2, screenHeight/2},/**< center 
+  {0,0}, {0,0},				    /* last & next pos 
   COLOR_BLACK,
-
+*/
 Layer layer3 = {		/**< Layer with an orange circle */
   (AbShape *)&circle8,
   {(screenWidth/2)+10, (screenHeight/2)+5}, /**< bit below & right of center */

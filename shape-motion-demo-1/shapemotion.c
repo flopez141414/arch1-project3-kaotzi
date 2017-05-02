@@ -19,16 +19,16 @@
 
 AbRect rect10 = {abRectGetBounds, abRectCheck, {10,10}}; /**< 10x10 rectangle */
 AbDiamond diamond = {abDiamondGetBounds, abDiamondCheck, 80};
-AbTTile ttile = {abTTileGetBounds, abTTileCheck, 20};
-AbITile itile = {abITileGetBounds, abITileCheck, 20};
-AbLTile ltile = {abLTileGetBounds, abLTileCheck, 20};
+AbTTile ttile = {abTTileGetBounds, abTTileCheck, 10};
+AbITile itile = {abITileGetBounds, abITileCheck, 10};
+AbLTile ltile = {abLTileGetBounds, abLTileCheck, 10};
 
 AbRectOutline fieldOutline = {	/* playing field */
   abRectOutlineGetBounds, abRectOutlineCheck,   
   {screenWidth/2 - 10, screenHeight/2 - 10}
 };
 
-Layer layer5 = {		/* playing field as a layer */
+Layer fieldLayer = {		/* playing field as a layer */
   (AbShape *) &fieldOutline,
   {screenWidth/2, screenHeight/2},/**< center */
   {0,0}, {0,0},				    /* last & next pos */
@@ -41,7 +41,7 @@ Layer layer4 = {
   {(screenWidth/2)+40, (screenHeight/2)+5}, /**< bit below & right of center */
   {0,0}, {0,0},				    /* last & next pos */
   COLOR_PINK,
-  &layer5,
+  &fieldLayer,
 };
   
  Layer layer3 = {		/**< Layer with an orange circle */
