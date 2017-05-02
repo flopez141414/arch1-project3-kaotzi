@@ -143,6 +143,64 @@ void abDiamondGetBounds(const AbDiamond *diamond, const Vec2 *centerPos, Region 
  */
 int abDiamondCheck(const AbDiamond *diamond, const Vec2 *centerPos, const Vec2 *pixel);
 
+/** An AbShape square Letter T tile
+ *
+ *  size: width of the tile.  
+ *  The "centerPos is at the tile's right center.
+ */
+typedef struct AbTTile_s {
+  void (*getBounds)(const struct AbTTile_s *shape, const Vec2 *centerPos, Region *bounds);
+  int (*check)(const struct AbTTile_s *shape, const Vec2 *centerPos, const Vec2 *pixelLoc);
+  int size;
+} AbTTile;
+
+
+/** As required by AbShape
+ */
+void abTTileGetBounds(const AbTTile *tile, const Vec2 *centerPos, Region *bounds);
+
+/** As required by AbShape
+ */
+int abTTileCheck(const AbTTile *tile, const Vec2 *centerPos, const Vec2 *pixel);
+/** An AbShape square Letter I tile
+ *
+ *  size: width of the tile.  
+ *  The "centerPos is at the tile's right center.
+ */
+typedef struct AbITile_s {
+  void (*getBounds)(const struct AbITile_s *shape, const Vec2 *centerPos, Region *bounds);
+  int (*check)(const struct AbITile_s *shape, const Vec2 *centerPos, const Vec2 *pixelLoc);
+  int size;
+} AbITile;
+
+
+/** As required by AbShape
+ */
+void abITileGetBounds(const AbITile *tile, const Vec2 *centerPos, Region *bounds);
+
+/** As required by AbShape
+ */
+int abITileCheck(const AbITile *tile, const Vec2 *centerPos, const Vec2 *pixel);
+/** An AbShape square Letter L tile
+ *
+ *  size: width of the tile.  
+ *  The "centerPos is at the tile's right center.
+ */
+typedef struct AbLTile_s {
+  void (*getBounds)(const struct AbLTile_s *shape, const Vec2 *centerPos, Region *bounds);
+  int (*check)(const struct AbLTile_s *shape, const Vec2 *centerPos, const Vec2 *pixelLoc);
+  int size;
+} AbLTile;
+
+
+/** As required by AbShape
+ */
+void abLTileGetBounds(const AbLTile *tile, const Vec2 *centerPos, Region *bounds);
+
+/** As required by AbShape
+ */
+int abLTileCheck(const AbLTile *tile, const Vec2 *centerPos, const Vec2 *pixel);
+
 
 /** AbShape rectangle
  *

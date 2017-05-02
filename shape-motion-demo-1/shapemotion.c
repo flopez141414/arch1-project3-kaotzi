@@ -18,51 +18,63 @@
 
 
 AbRect rect10 = {abRectGetBounds, abRectCheck, {10,10}}; /**< 10x10 rectangle */
-AbRArrow rightArrow = {abRArrowGetBounds, abRArrowCheck, 30};
+AbDiamond diamond = {abDiamondGetBounds, abDiamondCheck, 80};
+AbTTile ttile = {abTTileGetBounds, abTTileCheck, 20};
+AbITile itile = {abITileGetBounds, abITileCheck, 20};
+AbLTile ltile = {abLTileGetBounds, abLTileCheck, 20};
 
 AbRectOutline fieldOutline = {	/* playing field */
   abRectOutlineGetBounds, abRectOutlineCheck,   
   {screenWidth/2 - 10, screenHeight/2 - 10}
 };
 
-Layer layer4 = {
-  (AbShape *)&rightArrow,
-  {(screenWidth/2)+10, (screenHeight/2)+5}, /**< bit below & right of center */
-  {0,0}, {0,0},				    /* last & next pos */
-  COLOR_PINK,
-  0
-  
-};
-  
-
-Layer layer3 = {		/**< Layer with an orange circle */
-  (AbShape *)&circle8,
-  {(screenWidth/2)+10, (screenHeight/2)+5}, /**< bit below & right of center */
-  {0,0}, {0,0},				    /* last & next pos */
-  COLOR_VIOLET,
-  &layer4,
-};
-
-
-Layer fieldLayer = {		/* playing field as a layer */
+Layer layer5 = {		/* playing field as a layer */
   (AbShape *) &fieldOutline,
   {screenWidth/2, screenHeight/2},/**< center */
   {0,0}, {0,0},				    /* last & next pos */
   COLOR_BLACK,
-  &layer3
+  0
 };
 
+Layer layer4 = {
+  (AbShape *)&diamond,
+  {(screenWidth/2)+40, (screenHeight/2)+5}, /**< bit below & right of center */
+  {0,0}, {0,0},				    /* last & next pos */
+  COLOR_PINK,
+  &layer5,
+};
+  
+ Layer layer3 = {		/**< Layer with an orange circle */
+  (AbShape *)&ttile,
+  {(screenWidth/2)+46, (screenHeight/2)+5}, /**< bit below & right of center */
+  {0,0}, {0,0},				    /* last & next pos */
+  COLOR_YELLOW,
+  &layer4,
+};
+
+
+Layer layer2 = {		/**< Layer with an orange circle */
+  (AbShape *)&ltile,
+  {(screenWidth/2)+22, (screenHeight/2)+5}, /**< bit below & right of center */
+  {0,0}, {0,0},				    /* last & next pos */
+  COLOR_VIOLET,
+  &layer3,
+};
+
+
+
+
 Layer layer1 = {		/**< Layer with a red square */
-  (AbShape *)&rect10,
-  {screenWidth/2, screenHeight/2}, /**< center */
+  (AbShape *)&itile,
+  {(screenWidth/2)-2, screenHeight/2}, /**< center */
   {0,0}, {0,0},				    /* last & next pos */
   COLOR_RED,
-  &fieldLayer,
+  &layer2,
 };
 
 Layer layer0 = {		/**< Layer with an orange circle */
-  (AbShape *)&circle14,
-  {(screenWidth/2)+10, (screenHeight/2)+5}, /**< bit below & right of center */
+  (AbShape *)&ttile,
+  {(screenWidth/2)-26, (screenHeight/2)}, /**< bit below & right of center */
   {0,0}, {0,0},				    /* last & next pos */
   COLOR_ORANGE,
   &layer1,
@@ -167,7 +179,7 @@ void main()
   lcd_init();
   shapeInit();
   p2sw_init(1);
-   drawString5x7(20,20, "PONG", COLOR_RED, COLOR_BLUE);
+
   shapeInit();
 
   layerInit(&layer0);

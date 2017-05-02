@@ -9,7 +9,7 @@ CC              = msp430-elf-gcc
 AS              = msp430-elf-as
 AR              = msp430-elf-ar
 
-OBJECTS         = shape.o region.o rect.o vec2.o layer.o rarrow.o diamond.o
+OBJECTS         = shape.o region.o rect.o vec2.o layer.o rarrow.o diamond.o tilt.o
 
 libShape.a: $(OBJECTS)
 	$(AR) crs $@ $^

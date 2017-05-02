@@ -32,7 +32,10 @@ Layer layer4 = {
   COLOR_PINK,
   0
 };
-  
+  (AbShape *) &fieldOutline,
+  {screenWidth/2, screenHeight/2},/**< center */
+  {0,0}, {0,0},				    /* last & next pos */
+  COLOR_BLACK,
 
 Layer layer3 = {		/**< Layer with an orange circle */
   (AbShape *)&circle8,
@@ -44,10 +47,11 @@ Layer layer3 = {		/**< Layer with an orange circle */
 
 
 Layer fieldLayer = {		/* playing field as a layer */
-  (AbShape *) &fieldOutline,
-  {screenWidth/2, screenHeight/2},/**< center */
+  ((AbShape *)&diamond,
+  {(screenWidth/2)+40, (screenHeight/2)+5}, /**< bit below & right of center */
   {0,0}, {0,0},				    /* last & next pos */
-  COLOR_BLACK,
+  COLOR_PINK,
+  
   &layer3
 };
 
