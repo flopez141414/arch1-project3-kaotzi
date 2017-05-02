@@ -7,6 +7,8 @@
 #define SWITCHLOW SW5
 
 unsigned int p2sw_read();
+void  switch5_interrupt_handler();
+
 void p2sw_init(unsigned char mask);
 
 #endif // included

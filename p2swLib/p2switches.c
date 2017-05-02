@@ -2,6 +2,8 @@
 #include <lcdutils.h>
 #include <lcddraw.h>
 #include "p2switches.h"
+#define GREEN_LED BIT6
+
 
 static unsigned char switch_mask;
 static unsigned char switches_last_reported;
@@ -41,6 +43,8 @@ p2sw_init(unsigned char mask)
   P1OUT |= SWITCHLOW;		/* pull-ups for switch5 */
   P1DIR &= ~SWITCHLOW;		/* set switch5's bits for input */
   switch_update_interrupt_sense_sw5();
+  switch5_interrupt_handler();
+
 }
 
 /* Returns a word where:
@@ -58,8 +62,10 @@ void
 switch5_interrupt_handler()
 {
     char lowsw= switch_update_interrupt_sense_sw5();
-    if (lowsw = 0)
-     {drawString5x7(20,20, "BUTTON 5 DETECTED!" , COLOR_RED, COLOR_GREEN);}
+    if (lowsw & SWITCHLOW)
+     {drawString5x7(20,20, "BUTTON 5 DETECTED!" , COLOR_RED, COLOR_GREEN);
+        P1DIR |= GREEN_LED;}
+    else { P1DIR |= 0;}
 }  
 
 /* Switch on P2 (S1) */
@@ -76,7 +82,6 @@ __interrupt_vec(PORT1_VECTOR) Port_1(){
   if (P1IFG & SWITCHLOW) {	      /* did a button cause this interrupt? */
     P1IFG &= ~SWITCHLOW;		      /* clear pending sw interrupts */
     switch_update_interrupt_sense_sw5();	/* single handler for all switches --bottom board*/
-    switch5_interrupt_handler;
   }
 }
 
