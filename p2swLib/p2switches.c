@@ -1,6 +1,5 @@
 #include <msp430.h>
-#include <lcdutils.h>
-#include <lcddraw.h>
+
 #include "p2switches.h"
 #define GREEN_LED BIT6
 
@@ -63,7 +62,7 @@ switch5_interrupt_handler()
 {
     char lowsw= switch_update_interrupt_sense_sw5();
     if (lowsw & SWITCHLOW)
-     {drawString5x7(20,20, "BUTTON 5 DETECTED!" , COLOR_RED, COLOR_GREEN);
+     {drawString5x7(20,40, "BUTTON 5 DETECTED!" , COLOR_RED, COLOR_BLUE);
         P1DIR |= GREEN_LED;}
     else { P1DIR |= 0;}
 }  
