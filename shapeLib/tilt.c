@@ -5,6 +5,8 @@
  *  abTTileCheck returns true if the tile includes the selected pixel
  *  --center is the middle of the rt side.
  */
+//upload flag
+
 int 
 abTTileCheck(const AbTTile *ttile, const Vec2 *centerPos, const Vec2 *pixel)
 {
@@ -61,7 +63,7 @@ abITileCheck(const AbITile *itile, const Vec2 *centerPos, const Vec2 *pixel)
     if ((col <= fifthSize)||((4*fifthSize)<col<=size)) {	/* within first or last fifth of tile */
       within = 1;
      } else if ((fifthSize< col <= (2*fifthSize))||((3*fifthSize)< col <= (4*fifthSize))) {	/* within second or fourth fifth of tile */
-        within =(tenthSize< row <= (3*tenthSize));  /*not in second fifth of tile ht*/
+        within =!(tenthSize< row <= (3*tenthSize));  /*not in second fifth of tile ht*/
         }else if ((2*fifthSize)<col<=(3*fifthSize)){  /* center fifth of tile*/
            within=(row >(3*tenthSize));
          }

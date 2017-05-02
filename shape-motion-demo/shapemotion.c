@@ -47,7 +47,7 @@ Layer layer3 = {		/**< Layer with an orange circle */
 
 
 Layer fieldLayer = {		/* playing field as a layer */
-  ((AbShape *)&diamond,
+  (AbShape *)&diamond,
   {(screenWidth/2)+40, (screenHeight/2)+5}, /**< bit below & right of center */
   {0,0}, {0,0},				    /* last & next pos */
   COLOR_PINK,
