@@ -62,9 +62,10 @@ switch5_interrupt_handler()
 {
     char lowsw= switch_update_interrupt_sense_sw5();
     if (lowsw & SWITCHLOW)
-     {drawString5x7(20,40, "BUTTON 5 DETECTED!" , COLOR_RED, COLOR_BLUE);
+     {  drawString5x7(20,40, "BUTTON 5 DETECTED!" , COLOR_RED, COLOR_BLUE);
         P1DIR |= GREEN_LED;}
-    else { P1DIR |= 0;}
+    else { drawString5x7(20,40, "                  " , COLOR_RED, COLOR_BLUE);
+        P1DIR |= 0;}
 }  
 
 /* Switch on P2 (S1) */
@@ -81,6 +82,8 @@ __interrupt_vec(PORT1_VECTOR) Port_1(){
   if (P1IFG & SWITCHLOW) {	      /* did a button cause this interrupt? */
     P1IFG &= ~SWITCHLOW;		      /* clear pending sw interrupts */
     switch_update_interrupt_sense_sw5();	/* single handler for all switches --bottom board*/
+    switch5_interrupt_handler();
+
   }
 }
 

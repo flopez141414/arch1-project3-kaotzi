@@ -25,7 +25,7 @@ clean:
 	rm -f *.a *.o *.elf
 
 switchdemo.elf: switchdemo.o libp2sw.a 
-	$(CC) $(CFLAGS) ${LDFLAGS} -o $@ $^ -lTimer
+	$(CC) $(CFLAGS) ${LDFLAGS} -o $@ $^ -lLcd -lp2sw -lTimer
 
 load: switchdemo.elf
 	mspdebug rf2500 "prog $^"
