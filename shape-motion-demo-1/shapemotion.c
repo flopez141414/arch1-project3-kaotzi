@@ -19,9 +19,9 @@
 
 AbRect rect10 = {abRectGetBounds, abRectCheck, {10,10}}; /**< 10x10 rectangle */
 AbDiamond diamond = {abDiamondGetBounds, abDiamondCheck, 80};
-AbTTile ttile = {abTTileGetBounds, abTTileCheck, 10};
-AbITile itile = {abITileGetBounds, abITileCheck, 10};
-AbLTile ltile = {abLTileGetBounds, abLTileCheck, 10};
+AbTTile ttile = {abTTileGetBounds, abTTileCheck, 10}; //T tile
+AbITile itile = {abITileGetBounds, abITileCheck, 10}; //I tile
+AbLTile ltile = {abLTileGetBounds, abLTileCheck, 10}; //L tile
 
 AbRectOutline fieldOutline = {	/* playing field */
   abRectOutlineGetBounds, abRectOutlineCheck,   

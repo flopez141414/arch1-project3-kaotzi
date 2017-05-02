@@ -5,7 +5,7 @@
  *  abTTileCheck returns true if the tile includes the selected pixel
  *  --center is the middle of the rt side.
  */
-//upload flag
+// second upload
 
 int 
 abTTileCheck(const AbTTile *ttile, const Vec2 *centerPos, const Vec2 *pixel)
@@ -19,13 +19,17 @@ abTTileCheck(const AbTTile *ttile, const Vec2 *centerPos, const Vec2 *pixel)
   vec2Sub(&relPos, pixel, centerPos); /* vector from center to pixel */
   row = -relPos.axes[1]; col = -relPos.axes[0]; /* note that both are negated */
   if ((col >= 0)&&(-halfSize<= row <= halfSize)) {		/* not to right of tile or outside upper/lower bounds */
-    if ((col <= fifthSize)||((4*fifthSize)<col<=size)) {	/* within first or last fifth of tile */
+    if (col <= fifthSize) {	/* within first fifth of tile */
       within = 1;
-     } else if ((fifthSize< col <= (2*fifthSize))||((3*fifthSize)< col <= (4*fifthSize))) {	/* within second or fourth fifth of tile */
+     } else if (fifthSize< col <= (2*fifthSize)) {	/* within second fifth of tile */
         within =((row >(3*tenthSize))||(row <= tenthSize));  /*not in second fifth of tile ht*/
         }else if ((2*fifthSize)<col<=(3*fifthSize)){  /* center fifth of tile*/
            within=((row >(3*tenthSize))||(row <=(-3*tenthSize)));
-         }
+         }else if ((3*fifthSize)<col<=(4*fifthSize)){  /* fourth fifth of tile*/
+            within =((row >(3*tenthSize))||(row <= tenthSize));  /*not in second fifth of tile ht*/
+          }else if (col < size){  /*last fifth of tile*/
+             within = 1;
+           } 
      }
   return within;
 }

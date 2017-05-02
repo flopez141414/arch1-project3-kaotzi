@@ -26,6 +26,14 @@ clean:
 
 shapedemo.elf: shapedemo.o libShape.a 
 	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -o $@
+shapedemoT.elf: shapedemot.o libShape.a 
+	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -o $@
+shapedemoI.elf: shapedemoi.o libShape.a 
+	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -o $@
+shapedemoL.elf: shapedemol.o libShape.a 
+	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -o $@
+shapedemoPong.elf: shapedemoPong.o libShape.a 
+	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -o $@
 
 shapedemo2.elf: shapedemo2.o libShape.a 
 	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -o $@
@@ -40,4 +48,12 @@ load2: shapedemo2.elf
 	mspdebug rf2500 "prog $^"
 
 load3: shapedemo3.elf
+	mspdebug rf2500 "prog $^"
+loadt: shapedemot.elf
+	mspdebug rf2500 "prog $^"
+loadi: shapedemoi.elf
+	mspdebug rf2500 "prog $^"
+loadl: shapedemol.elf
+	mspdebug rf2500 "prog $^"
+loadp: shapedemoPong.elf
 	mspdebug rf2500 "prog $^"
