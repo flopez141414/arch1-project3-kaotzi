@@ -1,4 +1,4 @@
-#include "shape.h"
+ #include "shape.h"
 
 
 /** Check function required by AbShape
@@ -6,11 +6,12 @@
  *  --center is the middle of the rt side.
  */
 int 
-abTTileCheck(const TTile *tile, const Vec2 *centerPos, const Vec2 *pixel)
+abTTileCheck(const TTile *ttile, const Vec2 *centerPos, const Vec2 *pixel)
 {
   Vec2 relPos;
   int row, col, within = 0;
-  int size = tile->size;
+  int size = ttile->size;
+  int halfSize = size/2;
   int tenthSize = size/10;
   int fifthSize = size/5;
   vec2Sub(&relPos, pixel, centerPos); /* vector from center to pixel */
@@ -31,9 +32,9 @@ abTTileCheck(const TTile *tile, const Vec2 *centerPos, const Vec2 *pixel)
  *  abTTileGetBounds computes a tile's bounding box
  */
 void 
-abTTileGetBounds(const AbTTile *tile, const Vec2 *centerPos, Region *bounds)
+abTTileGetBounds(const AbTTile *ttile, const Vec2 *centerPos, Region *bounds)
 {
-  int size = tile->size, halfSize = size / 2;
+  int size = ttile->size, halfSize = size / 2;
   bounds->topLeft.axes[0] = centerPos->axes[0] - Size;
   bounds->topLeft.axes[1] = centerPos->axes[1] - halfSize;
   bounds->botRight.axes[0] = centerPos->axes[0];
@@ -45,11 +46,12 @@ abTTileGetBounds(const AbTTile *tile, const Vec2 *centerPos, Region *bounds)
  *  --center is the middle of the rt side.
  */
 int 
-abITileCheck(const ITile *tile, const Vec2 *centerPos, const Vec2 *pixel)
+abITileCheck(const ITile *itile, const Vec2 *centerPos, const Vec2 *pixel)
 {
   Vec2 relPos;
   int row, col, within = 0;
-  int size = tile->size;
+  int size = itile->size;
+  int halfSize = size/2;
   int tenthSize = size/10;
   int fifthSize = size/5;
   vec2Sub(&relPos, pixel, centerPos); /* vector from center to pixel */
@@ -71,9 +73,9 @@ abITileCheck(const ITile *tile, const Vec2 *centerPos, const Vec2 *pixel)
  *  abITileGetBounds computes a tile's bounding box
  */
 void 
-abITileGetBounds(const AbITile *tile, const Vec2 *centerPos, Region *bounds)
+abITileGetBounds(const AbITile *itile, const Vec2 *centerPos, Region *bounds)
 {
-  int size = tile->size, halfSize = size / 2;
+  int size = itile->size, halfSize = size / 2;
   bounds->topLeft.axes[0] = centerPos->axes[0] - Size;
   bounds->topLeft.axes[1] = centerPos->axes[1] - halfSize;
   bounds->botRight.axes[0] = centerPos->axes[0];
@@ -85,11 +87,12 @@ abITileGetBounds(const AbITile *tile, const Vec2 *centerPos, Region *bounds)
  *  --center is the middle of the rt side.
  */
 int 
-abLTileCheck(const LTile *tile, const Vec2 *centerPos, const Vec2 *pixel)
+abLTileCheck(const LTile *ltile, const Vec2 *centerPos, const Vec2 *pixel)
 {
   Vec2 relPos;
   int row, col, within = 0;
-  int size = tile->size;
+  int size = ltile->size;
+  int halfSize = size/2;
   int tenthSize = size/10;
   int fifthSize = size/5;
   vec2Sub(&relPos, pixel, centerPos); /* vector from center to pixel */
@@ -110,9 +113,9 @@ abLTileCheck(const LTile *tile, const Vec2 *centerPos, const Vec2 *pixel)
  *  abLTileGetBounds computes a tile's bounding box
  */
 void 
-abLTileGetBounds(const AbLTile *tile, const Vec2 *centerPos, Region *bounds)
+abLTileGetBounds(const AbLTile *ltile, const Vec2 *centerPos, Region *bounds)
 {
-  int size = tile->size, halfSize = size / 2;
+  int size = ltile->size, halfSize = size / 2;
   bounds->topLeft.axes[0] = centerPos->axes[0] - Size;
   bounds->topLeft.axes[1] = centerPos->axes[1] - halfSize;
   bounds->botRight.axes[0] = centerPos->axes[0];

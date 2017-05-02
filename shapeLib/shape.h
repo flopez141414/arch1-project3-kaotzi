@@ -157,11 +157,11 @@ typedef struct AbTTile_s {
 
 /** As required by AbShape
  */
-void abTTileGetBounds(const AbTTile *tile, const Vec2 *centerPos, Region *bounds);
+void abTTileGetBounds(const AbTTile *ttile, const Vec2 *centerPos, Region *bounds);
 
 /** As required by AbShape
  */
-int abTTileCheck(const AbTTile *tile, const Vec2 *centerPos, const Vec2 *pixel);
+int abTTileCheck(const AbTTile *ttile, const Vec2 *centerPos, const Vec2 *pixel);
 /** An AbShape square Letter I tile
  *
  *  size: width of the tile.  
@@ -176,11 +176,11 @@ typedef struct AbITile_s {
 
 /** As required by AbShape
  */
-void abITileGetBounds(const AbITile *tile, const Vec2 *centerPos, Region *bounds);
+void abITileGetBounds(const AbITile *itile, const Vec2 *centerPos, Region *bounds);
 
 /** As required by AbShape
  */
-int abITileCheck(const AbITile *tile, const Vec2 *centerPos, const Vec2 *pixel);
+int abITileCheck(const AbITile *itile, const Vec2 *centerPos, const Vec2 *pixel);
 /** An AbShape square Letter L tile
  *
  *  size: width of the tile.  
@@ -195,11 +195,11 @@ typedef struct AbLTile_s {
 
 /** As required by AbShape
  */
-void abLTileGetBounds(const AbLTile *tile, const Vec2 *centerPos, Region *bounds);
+void abLTileGetBounds(const AbLTile *ltile, const Vec2 *centerPos, Region *bounds);
 
 /** As required by AbShape
  */
-int abLTileCheck(const AbLTile *tile, const Vec2 *centerPos, const Vec2 *pixel);
+int abLTileCheck(const AbLTile *ltile, const Vec2 *centerPos, const Vec2 *pixel);
 
 
 /** AbShape rectangle

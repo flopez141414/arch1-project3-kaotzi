@@ -38,8 +38,7 @@ main()
   clearScreen(COLOR_BLUE);
   drawString5x7(20,40, "Testing my Pong", COLOR_GREEN, COLOR_BLUE);
   shapeInit();
-  rectPos = {10,50};
-
+  
   abDrawPos((AbShape*)&rect10, &rectPos, COLOR_ORANGE, COLOR_BLUE);
   drawString5x7(20,75, "Pong is Tested", COLOR_BLACK, COLOR_ORANGE);
   shapeInit();
