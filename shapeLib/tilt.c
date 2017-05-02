@@ -46,7 +46,7 @@ abTTileGetBounds(const AbTTile *ttile, const Vec2 *centerPos, Region *bounds)
  *  --center is the middle of the rt side.
  */
 int 
-abITileCheck(const ITile *itile, const Vec2 *centerPos, const Vec2 *pixel)
+abITileCheck(const AbITile *itile, const Vec2 *centerPos, const Vec2 *pixel)
 {
   Vec2 relPos;
   int row, col, within = 0;
@@ -87,7 +87,7 @@ abITileGetBounds(const AbITile *itile, const Vec2 *centerPos, Region *bounds)
  *  --center is the middle of the rt side.
  */
 int 
-abLTileCheck(const LTile *ltile, const Vec2 *centerPos, const Vec2 *pixel)
+abLTileCheck(const AbLTile *ltile, const Vec2 *centerPos, const Vec2 *pixel)
 {
   Vec2 relPos;
   int row, col, within = 0;
