@@ -21,7 +21,7 @@ abTTileCheck(const AbTTile *ttile, const Vec2 *centerPos, const Vec2 *pixel)
       within = 1;
      } else if ((fifthSize< col <= (2*fifthSize))||((3*fifthSize)< col <= (4*fifthSize))) {	/* within second or fourth fifth of tile */
         within =((row >(3*tenthSize))||(row <= tenthSize));  /*not in second fifth of tile ht*/
-        }else if ((2*fifthSize)<row<=(3*fifthSize)){  /* center fifth of tile*/
+        }else if ((2*fifthSize)<col<=(3*fifthSize)){  /* center fifth of tile*/
            within=((row >(3*tenthSize))||(row <=(-3*tenthSize)));
          }
      }
@@ -62,7 +62,7 @@ abITileCheck(const AbITile *itile, const Vec2 *centerPos, const Vec2 *pixel)
       within = 1;
      } else if ((fifthSize< col <= (2*fifthSize))||((3*fifthSize)< col <= (4*fifthSize))) {	/* within second or fourth fifth of tile */
         within =(tenthSize< row <= (3*tenthSize));  /*not in second fifth of tile ht*/
-        }else if ((2*fifthSize)<row<=(3*fifthSize)){  /* center fifth of tile*/
+        }else if ((2*fifthSize)<col<=(3*fifthSize)){  /* center fifth of tile*/
            within=(row >(3*tenthSize));
          }
      }

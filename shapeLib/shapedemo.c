@@ -5,9 +5,9 @@
 
 const AbRect rect10 = {abRectGetBounds, abRectCheck, 60,10};; //makes horizontal banner across most of the screen
 const AbRect rect5 = {abRectGetBounds, abRectCheck, 4,16};; //makes horizontal banner across most of the screen
-AbTTile ttile = {abTTileGetBounds, abTTileCheck, 10}; //T tile
-AbITile itile = {abITileGetBounds, abITileCheck, 10}; //I tile
-AbLTile ltile = {abLTileGetBounds, abLTileCheck, 10}; //L tile
+AbTTile ttile = {abTTileGetBounds, abTTileCheck, 20}; //T tile
+AbITile itile = {abITileGetBounds, abITileCheck, 20}; //I tile
+AbLTile ltile = {abLTileGetBounds, abLTileCheck, 20}; //L tile
 
 void
 abDrawPos(AbShape *shape, Vec2 *shapeCenter, u_int fg_color, u_int bg_color)
@@ -37,10 +37,10 @@ main()
   shapeInit();
   Vec2 rectPos = screenCenter;
   Vec2 rectPos2 = { 20, 50 };
-  Vec2 tPos = { 3, 80 };
-  Vec2 iPos = { 30, 80 };
-  Vec2 lPos = { 55, 80 };
-  Vec2 t2Pos = { 80, 50 };
+  Vec2 tPos = { 30, 20 };
+  Vec2 iPos = { 60, 50 };
+  Vec2 lPos = { 90, 20 };
+  Vec2 t2Pos = { 120, 50 };
     
   clearScreen(COLOR_BLUE);
   drawString5x7(20,40, "Testing my Pong", COLOR_GREEN, COLOR_BLUE);
@@ -59,13 +59,13 @@ main()
   shapeInit();
   abDrawPos((AbShape*)&rect10, &rectPos, COLOR_ORANGE, COLOR_BLUE);
   shapeInit();
-  abDrawPos((AbShape*)&ttile, &tPos, COLOR_ORANGE, COLOR_BLUE);
+  abDrawPos((AbShape*)&ttile, &tPos, COLOR_RED, COLOR_BLUE);
   shapeInit();
-  abDrawPos((AbShape*)&itile, &tPos, COLOR_ORANGE, COLOR_BLUE);
+  abDrawPos((AbShape*)&itile, &iPos, COLOR_YELLOW, COLOR_BLUE);
   shapeInit();
-  abDrawPos((AbShape*)&ltile, &tPos, COLOR_ORANGE, COLOR_BLUE);
+  abDrawPos((AbShape*)&ltile, &lPos, COLOR_WHITE, COLOR_BLUE);
   shapeInit();
-  abDrawPos((AbShape*)&ttile, &t2Pos, COLOR_ORANGE, COLOR_BLUE);
+  abDrawPos((AbShape*)&ttile, &t2Pos, COLOR_GREEN, COLOR_BLUE);
   
 }
 
