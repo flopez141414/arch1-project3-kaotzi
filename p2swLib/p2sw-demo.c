@@ -10,10 +10,28 @@
 //#include "shapedemo.c"
 //abDrawPos(AbShape *shape, Vec2 *shapeCenter, u_int fg_color, u_int bg_color);
 
-AbRect recttop = {abRectGetBounds, abRectCheck, {screenWidth,10}}; 
-AbRect rectside ={abRectGetBounds, abRectCheck, {10, screenHeight}};
+extern int paddley;
+extern int covery;
+#define  int gamex=screenWidth/2;
+
 AbRect paddle = {abRectGetBounds, abRectCheck, {screenWidth/5, 5}};
 AbDiamond dball = {abDiamondGetBounds, abDiamondCheck, 15};
+
+void move_bar (int dist)
+{
+  if ((paddley - dist) > (screenCenter+7)){
+      covery=paddley;
+      paddley= paddley-dist;
+      abDrawPos((AbShape*)&paddle, [gamex, paddley] , COLOR_BLACK, COLOR_BLUE);
+      abDrawPos((AbShape*)&paddle, [gamex, covery] , COLOR_BLUE, COLOR_BLUE);
+   } else{
+      covery=paddley;
+      paddley= screenHeight-3;
+      abDrawPos((AbShape*)&paddle, [gamex, paddley] , COLOR_BLACK, COLOR_BLUE);
+      abDrawPos((AbShape*)&paddle, [gamex, covery] , COLOR_BLUE, COLOR_BLUE);
+       }
+}
+
 
 /** Initializes everything, clears the screen, draws "hello" and the circle */
 void main()
@@ -25,22 +43,20 @@ void main()
   p2sw_init(15);
   or_sr(0x8);			/* GIE (enable interrupts) */
   u_char width = screenWidth, height = screenHeight;
-
+  int covery=0;
+  int  paddley=screenHeight-3;
+ 
   clearScreen(COLOR_BLUE);
-   Vec2 rectPost = {screenWidth/2, 3};
-   Vec2 rectPosl = { 3, screenHeight/2 };
-   Vec2 rectPosr = { screenWidth-3, screenHeight/2 };
+
    Vec2 padPos = { screenWidth/2, screenHeight-3 };
    Vec2 balPos =  screenCenter;
-  abDrawPos((AbShape*)&recttop, &rectPost, COLOR_BLACK, COLOR_BLUE);
-  abDrawPos((AbShape*)&rectside, &rectPosl, COLOR_BLACK, COLOR_BLUE);
-  abDrawPos((AbShape*)&rectside, &rectPosr, COLOR_BLACK, COLOR_BLUE);
   abDrawPos((AbShape*)&paddle, &padPos, COLOR_BLACK, COLOR_BLUE);
   abDrawPos((AbShape*)&dball, &balPos, COLOR_BLACK, COLOR_BLUE);
   
-  drawString5x7(10,10, "switches:", COLOR_GREEN, COLOR_BLUE);
+  drawString5x7(10,10, "speed:", COLOR_GREEN, COLOR_BLUE);
   while (1) {
     u_int switches = p2sw_read(), i;
+    move_up(i);
     char str[5];
     for (i = 0; i < 4; i++)
       str[i] = (switches & (1<<i)) ? '-' : '0'+i;
