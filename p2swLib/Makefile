@@ -24,7 +24,7 @@ install: libp2sw.a
 clean:
 	rm -f *.a *.o *.elf
 
-p2sw-demo.elf: p2sw-demo.o  tiltscreen.o wdt_handler.o libp2sw.a state.o
+p2sw-demo.elf: p2sw-demo.o  tiltscreen.o wdt_handler.o libp2sw.a state.o buzzer.o
 	$(CC) $(CFLAGS) ${LDFLAGS} -o $@ $^ -lLcd -lTimer -lShape
 
 load: p2sw-demo.elf
