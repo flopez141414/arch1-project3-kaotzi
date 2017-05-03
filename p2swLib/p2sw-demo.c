@@ -31,7 +31,7 @@ void main()
    Vec2 rectPosl = { 3, screenHeight/2 };
    Vec2 rectPosr = { screenWidth-3, screenHeight/2 };
    Vec2 padPos = { screenWidth/2, screenHeight-3 };
-   Vec2 balPos = { centerScreen };
+   Vec2 balPos =  screenCenter;
   abDrawPos((AbShape*)&recttop, &rectPost, COLOR_BLACK, COLOR_BLUE);
   abDrawPos((AbShape*)&rectside, &rectPosl, COLOR_BLACK, COLOR_BLUE);
   abDrawPos((AbShape*)&rectside, &rectPosr, COLOR_BLACK, COLOR_BLUE);
