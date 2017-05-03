@@ -12,7 +12,9 @@
 
 extern int paddley;
 extern int covery;
-#define  int gamex=screenWidth/2;
+extern Vec2 padPos;
+extern Vec2 covPos;
+extern  int gamex;
 
 AbRect paddle = {abRectGetBounds, abRectCheck, {screenWidth/5, 5}};
 AbDiamond dball = {abDiamondGetBounds, abDiamondCheck, 15};
@@ -22,8 +24,10 @@ void move_bar (int dist)
   if ((paddley - dist) > (screenCenter+7)){
       covery=paddley;
       paddley= paddley-dist;
-      abDrawPos((AbShape*)&paddle, [gamex, paddley] , COLOR_BLACK, COLOR_BLUE);
-      abDrawPos((AbShape*)&paddle, [gamex, covery] , COLOR_BLUE, COLOR_BLUE);
+      padPos={gamex, paddley};
+      covPos={gamex, covery};
+      abDrawPos((AbShape*)&paddle, &padPos , COLOR_BLACK, COLOR_BLUE);
+      abDrawPos((AbShape*)&paddle, &covPos , COLOR_BLUE, COLOR_BLUE);
    } else{
       covery=paddley;
       paddley= screenHeight-3;
@@ -45,7 +49,7 @@ void main()
   u_char width = screenWidth, height = screenHeight;
   int covery=0;
   int  paddley=screenHeight-3;
- 
+  int gamex=screenWidth/2;
   clearScreen(COLOR_BLUE);
 
    Vec2 padPos = { screenWidth/2, screenHeight-3 };
