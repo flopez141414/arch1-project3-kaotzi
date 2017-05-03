@@ -28,7 +28,11 @@ void buzzer_update()
   CCR1 = buzCycle >> 1;		/* one half cycle */
 }
 
-
+void buzzer_shutup()
+{ short buzCycle = 0;
+  CCR0 = buzCycle;
+  CCR1 = buzCycle >> 1;
+}
     
     
   

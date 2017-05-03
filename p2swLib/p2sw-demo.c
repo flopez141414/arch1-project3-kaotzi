@@ -69,6 +69,8 @@ void move_bar (int dist)
       abDrawPos((AbShape*)&paddle, &padPosUp , COLOR_BLACK, COLOR_BLUE);
       abDrawPos((AbShape*)&paddle, &covPosUp , COLOR_BLUE, COLOR_BLUE);
      drawString5x7(50,40, "Keep trying" , COLOR_GREEN, COLOR_BLUE);
+     buzzer_shutup();
+     
    } else{
       covery=paddley;
       paddley= screenHeight-3;

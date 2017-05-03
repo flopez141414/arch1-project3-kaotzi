@@ -4,5 +4,6 @@
 
 void buzzer_init();
 void buzzer_update();
+void buzzer_shutup();
 
 #endif // included
