@@ -23,15 +23,15 @@ void move_bar (int dist)
   if ((paddley - dist) > (screenHeight+7)){
       covery=paddley;
       paddley= paddley-dist;
-      vec2 padPosUp={gamex, paddley};
-      vec2 covPosUp={gamex, covery};
+      Vec2 padPosUp={gamex, paddley};
+      Vec2 covPosUp={gamex, covery};
       abDrawPos((AbShape*)&paddle, &padPosUp , COLOR_BLACK, COLOR_BLUE);
       abDrawPos((AbShape*)&paddle, &covPosUp , COLOR_BLUE, COLOR_BLUE);
    } else{
       covery=paddley;
       paddley= screenHeight-3;
-      vec2 padPosDn={gamex, paddley};
-      vec2 covPosDn={gamex, covery};
+      Vec2 padPosDn={gamex, paddley};
+      Vec2 covPosDn={gamex, covery};
       abDrawPos((AbShape*)&paddle, &padPosDn , COLOR_BLACK, COLOR_BLUE);
       abDrawPos((AbShape*)&paddle, &covPosDn , COLOR_BLUE, COLOR_BLUE);
        }
