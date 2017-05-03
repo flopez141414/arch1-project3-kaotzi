@@ -13,25 +13,6 @@
 AbRect paddle = {abRectGetBounds, abRectCheck, {screenWidth/5, 5}};
 AbDiamond dball = {abDiamondGetBounds, abDiamondCheck, 15};
 
-void move_bar (int dist)
-{
-  if ((paddley - dist) > (screenHeight+7)){
-      covery=paddley;
-      paddley= paddley-dist;
-      Vec2 padPosUp={gamex, paddley};
-      Vec2 covPosUp={gamex, covery};
-      abDrawPos((AbShape*)&paddle, &padPosUp , COLOR_BLACK, COLOR_BLUE);
-      abDrawPos((AbShape*)&paddle, &covPosUp , COLOR_BLUE, COLOR_BLUE);
-   } else{
-      covery=paddley;
-      paddley= screenHeight-3;
-      Vec2 padPosDn={gamex, paddley};
-      Vec2 covPosDn={gamex, covery};
-      abDrawPos((AbShape*)&paddle, &padPosDn , COLOR_BLACK, COLOR_BLUE);
-      abDrawPos((AbShape*)&paddle, &covPosDn , COLOR_BLUE, COLOR_BLUE);
-       }
-}
-
 
 /** Initializes everything, clears the screen, draws "hello" and the circle */
 void main()
@@ -66,4 +47,24 @@ void main()
   }
 
 
+}
+
+
+void move_bar (int dist)
+{
+  if ((paddley - dist) > (screenHeight+7)){
+      covery=paddley;
+      paddley= paddley-dist;
+      Vec2 padPosUp={gamex, paddley};
+      Vec2 covPosUp={gamex, covery};
+      abDrawPos((AbShape*)&paddle, &padPosUp , COLOR_BLACK, COLOR_BLUE);
+      abDrawPos((AbShape*)&paddle, &covPosUp , COLOR_BLUE, COLOR_BLUE);
+   } else{
+      covery=paddley;
+      paddley= screenHeight-3;
+      Vec2 padPosDn={gamex, paddley};
+      Vec2 covPosDn={gamex, covery};
+      abDrawPos((AbShape*)&paddle, &padPosDn , COLOR_BLACK, COLOR_BLUE);
+      abDrawPos((AbShape*)&paddle, &covPosDn , COLOR_BLUE, COLOR_BLUE);
+       }
 }
