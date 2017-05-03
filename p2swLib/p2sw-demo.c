@@ -8,6 +8,7 @@
 #include <p2switches.h>
 #include <shape.h>
 #include "p2sw-demo.h"
+#include "buzzer.h"
 
 int covery;
 int  paddley;
@@ -26,6 +27,7 @@ void main()
   configureClocks();
   lcd_init();
   p2sw_init(15);
+  buzzer_init();
   or_sr(0x8);			/* GIE (enable interrupts) */
   u_char width = screenWidth, height = screenHeight;
   covery=0;
@@ -75,5 +77,6 @@ void move_bar (int dist)
       abDrawPos((AbShape*)&paddle, &padPosDn , COLOR_BLACK, COLOR_BLUE);
       abDrawPos((AbShape*)&paddle, &covPosDn , COLOR_BLUE, COLOR_BLUE);
      drawString5x7(50,40, "You got it!" , COLOR_RED, COLOR_BLUE);
+     buzzer_update();
        }
 }
