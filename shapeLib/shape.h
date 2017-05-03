@@ -264,4 +264,7 @@ void layerDraw(Layer *layers);
   */
 extern u_int bgColor;		/*  background color */
 
+void abDrawPos(AbShape *shape, Vec2 *shapeCenter, u_int fg_color, u_int bg_color);
+
+
 #endif
