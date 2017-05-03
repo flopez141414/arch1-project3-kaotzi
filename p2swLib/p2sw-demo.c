@@ -58,7 +58,7 @@ void main()
 
 
 void move_bar (int dist)
-{ dist=dist+5;  //more visible change
+{ dist=dist*2;  //more visible change
   if ((paddley - dist) > (screenHeight/2 + 7)){
       covery=paddley;
       paddley= paddley-dist;
@@ -66,6 +66,7 @@ void move_bar (int dist)
       Vec2 covPosUp={gamex, covery};
       abDrawPos((AbShape*)&paddle, &padPosUp , COLOR_BLACK, COLOR_BLUE);
       abDrawPos((AbShape*)&paddle, &covPosUp , COLOR_BLUE, COLOR_BLUE);
+     drawString5x7(50,40, "Keep trying" , COLOR_GREEN, COLOR_BLUE);
    } else{
       covery=paddley;
       paddley= screenHeight-3;
@@ -73,5 +74,6 @@ void move_bar (int dist)
       Vec2 covPosDn={gamex, covery};
       abDrawPos((AbShape*)&paddle, &padPosDn , COLOR_BLACK, COLOR_BLUE);
       abDrawPos((AbShape*)&paddle, &covPosDn , COLOR_BLUE, COLOR_BLUE);
+     drawString5x7(50,40, "You got it!" , COLOR_RED, COLOR_BLUE);
        }
 }
