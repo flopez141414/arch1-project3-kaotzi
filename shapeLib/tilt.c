@@ -27,7 +27,7 @@ abTTileCheck(const AbTTile *ttile, const Vec2 *centerPos, const Vec2 *pixel)
            within=((row >(3*tenthSize))||(row <=(-3*tenthSize)));
          }else if (col<=(4*fifthSize)){  /* fourth fifth of tile*/
             within =((row >(3*tenthSize))||(row <= tenthSize));  /*not in second fifth of tile ht*/
-          }else if (col < size){  /*last fifth of tile*/
+          }else if (col <= size){  /*last fifth of tile*/
              within = 1;
            } 
      }
@@ -69,10 +69,10 @@ abITileCheck(const AbITile *itile, const Vec2 *centerPos, const Vec2 *pixel)
      } else if (col <= (2*fifthSize)){	/* within second fifth of tile */
         within =((row<tenthSize) || (row >= (3*tenthSize)));  /*not in second fifth of tile ht*/
         }else if (col<=(3*fifthSize)){  /* center fifth of tile*/
-           within=(row >(3*tenthSize));
+           within=(row >=(3*tenthSize));
          }else if (col<=(4*fifthSize)){  /*within fourth fifth of tile*/  
            within = ((row<tenthSize)|| (row >= (3*tenthSize)));  /*not in second fifth of tile ht*/
-          }else if (col <size){
+          }else if (col <=size){
             within =1;
            }
      }
@@ -114,7 +114,7 @@ abLTileCheck(const AbLTile *ltile, const Vec2 *centerPos, const Vec2 *pixel)
         within =((row >(-tenthSize))||(row <= (-3*tenthSize)));  /*not in fourth fifth of tile ht*/
         }else if (col<=(4*fifthSize)){  /* fourth fifth of tile horiz*/
            within=((row >(3*tenthSize))||(row <=(-3*tenthSize)));
-         }else if (row <size){     /*last fifth of tile*/
+         }else if (row <=size){     /*last fifth of tile*/
            within = 1;
            }
      }
