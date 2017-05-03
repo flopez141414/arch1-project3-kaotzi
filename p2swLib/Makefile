@@ -25,7 +25,7 @@ clean:
 	rm -f *.a *.o *.elf
 
 p2sw-demo.elf: p2sw-demo.o  tiltscreen.o wdt_handler.o libp2sw.a state.o
-	$(CC) $(CFLAGS) ${LDFLAGS} -o $@ $^ -lLcd -lTimer -lShape -lCircle
+	$(CC) $(CFLAGS) ${LDFLAGS} -o $@ $^ -lLcd -lTimer -lShape
 
 load: p2sw-demo.elf
 	mspdebug rf2500 "prog $^"

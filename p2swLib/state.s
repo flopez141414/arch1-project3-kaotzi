@@ -7,10 +7,11 @@
 	.text
 
 	.globl move_up
-move_up:	
+	
 	; void move_up(selector) {
-	; int moveMe = 0;
-	switch(selector)
+				; int moveMe = 0;
+				;
+	;(switch selector)
 	; case 0:
 	; moveMe +=1
 	; case 1:
@@ -25,20 +26,17 @@ move_up:
 	; 
 	;}
 
-
-		 .data
-selector:       .word
-
          .text
-jt:      .word default ; jt[0]
+jt:
+	 .word default ; jt[0]
          .word option1;  ; jt[1]
          .word option2;  ; jt[2]
          .word option3;  jt[3]
-		 .word option4;  jt[4]
+	 .word option4;  jt[4]
 
          .global move_up
 move_up:
-         move #0,r13; r13 = number 0=moveMe;
+         mov #0,r13; r13 = number 0=moveMe;
          ;; range check on selector (selector)
          cmp #5, &selector     
          jc default      ; s-5 < 0 
@@ -58,8 +56,6 @@ option2: add #1, r13     ; add+01 and moveMe
                          ; no break
 option3: add #1, r13     ; add+01 and moveMe
                          ; no break
-default: add #1, r13     ; add+01 and moveMe
-                         ; no break						 
 
 default: call #move_bar(moveMe)    ; call moveMe
                          ;  but doesn't matter
