@@ -12,8 +12,7 @@
 
 extern int paddley;
 extern int covery;
-extern Vec2 padPos;
-extern Vec2 covPos;
+
 extern  int gamex;
 
 AbRect paddle = {abRectGetBounds, abRectCheck, {screenWidth/5, 5}};
@@ -21,18 +20,20 @@ AbDiamond dball = {abDiamondGetBounds, abDiamondCheck, 15};
 
 void move_bar (int dist)
 {
-  if ((paddley - dist) > (screenCenter+7)){
+  if ((paddley - dist) > (screenHeight+7)){
       covery=paddley;
       paddley= paddley-dist;
-      padPos={gamex, paddley};
-      covPos={gamex, covery};
-      abDrawPos((AbShape*)&paddle, &padPos , COLOR_BLACK, COLOR_BLUE);
-      abDrawPos((AbShape*)&paddle, &covPos , COLOR_BLUE, COLOR_BLUE);
+      vec2 padPosUp={gamex, paddley};
+      vec2 covPosUp={gamex, covery};
+      abDrawPos((AbShape*)&paddle, &padPosUp , COLOR_BLACK, COLOR_BLUE);
+      abDrawPos((AbShape*)&paddle, &covPosUp , COLOR_BLUE, COLOR_BLUE);
    } else{
       covery=paddley;
       paddley= screenHeight-3;
-      abDrawPos((AbShape*)&paddle, [gamex, paddley] , COLOR_BLACK, COLOR_BLUE);
-      abDrawPos((AbShape*)&paddle, [gamex, covery] , COLOR_BLUE, COLOR_BLUE);
+      vec2 padPosDn={gamex, paddley};
+      vec2 covPosDn={gamex, covery};
+      abDrawPos((AbShape*)&paddle, &padPosDn , COLOR_BLACK, COLOR_BLUE);
+      abDrawPos((AbShape*)&paddle, &covPosDn , COLOR_BLUE, COLOR_BLUE);
        }
 }
 
