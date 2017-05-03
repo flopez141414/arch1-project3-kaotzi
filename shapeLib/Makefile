@@ -26,11 +26,11 @@ clean:
 
 shapedemo.elf: shapedemo.o libShape.a 
 	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -o $@
-shapedemoT.elf: shapedemot.o libShape.a 
+shapedemot.elf: shapedemot.o libShape.a 
 	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -o $@
-shapedemoI.elf: shapedemoi.o libShape.a 
+shapedemoi.elf: shapedemoi.o libShape.a 
 	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -o $@
-shapedemoL.elf: shapedemol.o libShape.a 
+shapedemol.elf: shapedemol.o libShape.a 
 	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -o $@
 shapedemoPong.elf: shapedemoPong.o libShape.a 
 	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -o $@
