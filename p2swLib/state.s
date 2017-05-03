@@ -38,11 +38,11 @@ jt:
 move_up:
          mov #0,r13; r13 = number 0=moveMe;
          ;; range check on selector (selector)
-         cmp #5, &selector     
+         cmp #5, r12     
          jc default      ; s-5 < 0 
 
          ;; index into jt
-         mov &selector, r12
+         
          add r12, r12    ; r12=2*selector
          mov jt(r12), r0 ; jmp jt[selector]
 
@@ -57,6 +57,7 @@ option2: add #1, r13     ; add+01 and moveMe
 option3: add #1, r13     ; add+01 and moveMe
                          ; no break
 
+option4: add #1, r13		;no break, added 1 to return
 default: call #move_bar(moveMe)    ; call moveMe
                          ;  but doesn't matter
 end:     pop r0
