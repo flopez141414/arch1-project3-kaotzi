@@ -33,7 +33,7 @@ shapedemoi.elf: shapedemoi.o libShape.a
 shapedemol.elf: shapedemol.o libShape.a 
 	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -o $@
 shapedemoPong.elf: shapedemoPong.o libShape.a 
-	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -o $@
+	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -lCircle -o $@
 
 shapedemo2.elf: shapedemo2.o libShape.a 
 	$(CC) $(CFLAGS) ${LDFLAGS} $^ -L../lib -lTimer -lLcd -o $@

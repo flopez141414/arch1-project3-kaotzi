@@ -10,9 +10,10 @@
 #include <libTimer.h>
 #include <lcdutils.h>
 #include <lcddraw.h>
-#include <p2switches.h>
+#include "p2switches.h"
 #include <shape.h>
 #include <abCircle.h>
+#include "tiltscreen.h"
 
 #define GREEN_LED BIT6
 
