@@ -60,10 +60,10 @@ main()
   drawString5x7(5,5,"Score: ", COLOR_WHITE, COLOR_BLUE);
   
   //testing TILT
-  shapeInit();
+  //shapeInit();
   abDrawPos((AbShape*)&rectp1, &p1Pos2, COLOR_YELLOW, COLOR_BLUE); // P leg
   abDrawPos((AbShape*)&rectn1, &n1Pos, COLOR_ORANGE, COLOR_BLUE);
-  shapeInit();
+  //shapeInit();
   abDrawPos((AbShape*)&circle8, &p2Pos, COLOR_RED, COLOR_BLUE);
   /*shapeInit();
   abDrawPos((AbShape*)&itile, &iPos, COLOR_YELLOW, COLOR_BLUE);
