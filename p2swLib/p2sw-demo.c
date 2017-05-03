@@ -9,9 +9,13 @@
 #include <shape.h>
 #include "p2sw-demo.h"
 
+int covery;
+int  paddley;
+int gamex;
 
 AbRect paddle = {abRectGetBounds, abRectCheck, {screenWidth/5, 5}};
 AbDiamond dball = {abDiamondGetBounds, abDiamondCheck, 15};
+
 
 
 /** Initializes everything, clears the screen, draws "hello" and the circle */
@@ -24,9 +28,9 @@ void main()
   p2sw_init(15);
   or_sr(0x8);			/* GIE (enable interrupts) */
   u_char width = screenWidth, height = screenHeight;
-  int covery=0;
-  int  paddley=screenHeight-3;
-  int gamex=screenWidth/2;
+  covery=0;
+  paddley=screenHeight-3;
+  gamex=screenWidth/2;
   clearScreen(COLOR_BLUE);
 
    Vec2 padPos = { screenWidth/2, screenHeight-3 };

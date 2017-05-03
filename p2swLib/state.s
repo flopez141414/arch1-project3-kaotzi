@@ -7,10 +7,10 @@
 	.text
 
 	.globl move_up
-move_up:	
+	
 	; void move_up(selector) {
 	; int moveMe = 0;
-	switch(selector)
+	;switch(selector)
 	; case 0:
 	; moveMe +=1
 	; case 1:
@@ -38,7 +38,7 @@ jt:      .word default ; jt[0]
 
          .global move_up
 move_up:
-         move #0,r13; r13 = number 0=moveMe;
+         mov #0,r13; r13 = number 0=moveMe;
          ;; range check on selector (s)
          cmp #5, &s    
          jc default      ; s-5 < 0 
