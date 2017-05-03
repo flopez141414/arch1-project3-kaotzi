@@ -26,6 +26,13 @@
 	; 
 	;}
 
+<<<<<<< HEAD
+
+		 .data
+s:       .word 1
+
+=======
+>>>>>>> origin/master
          .text
 jt:
 	 .word default ; jt[0]
@@ -36,6 +43,17 @@ jt:
 
          .global move_up
 move_up:
+<<<<<<< HEAD
+         move #0,r13; r13 = number 0=moveMe;
+         ;; range check on selector (s)
+         cmp #5, &s    
+         jc default      ; s-5 < 0 
+
+         ;; index into jt
+         mov &s, r12
+         add r12, r12    ; r12=2*s
+         mov jt(r12), r0 ; jmp jt[s]
+=======
          mov #0,r13; r13 = number 0=moveMe;
          ;; range check on selector (selector)
          cmp #5, r12     
@@ -45,6 +63,7 @@ move_up:
          
          add r12, r12    ; r12=2*selector
          mov jt(r12), r0 ; jmp jt[selector]
+>>>>>>> origin/master
 
          ;; switch table options
          ;; same order as in source code
@@ -56,8 +75,17 @@ option2: add #1, r13     ; add+01 and moveMe
                          ; no break
 option3: add #1, r13     ; add+01 and moveMe
                          ; no break
+<<<<<<< HEAD
+option4: add #1, r13     ; add+01 and moveMe
+                         ; no break						 
+
+default: 
+		 mov r13,r12 ; move value into call
+         call #move_bar(moveMe)    ; call moveMe
+=======
 
 option4: add #1, r13		;no break, added 1 to return
 default: call #move_bar(moveMe)    ; call moveMe
+>>>>>>> origin/master
                          ;  but doesn't matter
 end:     pop r0

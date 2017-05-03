@@ -1,7 +1,6 @@
-/** \file shapemotion.c
+/** \file tiltscreen.c
  *  \brief This is a simple shape motion demo.
- *  This demo creates two layers containing shapes.
- *  One layer contains a rectangle and the other a circle.
+ *  This demo creates two layers that spell out TILT.
  *  While the CPU is running the green LED is on, and
  *  when the screen does not need to be redrawn the CPU
  *  is turned off along with the green LED.
@@ -44,7 +43,7 @@ Layer layer4 = {
   &fieldLayer,
 };
   
- Layer layer3 = {		/**< Layer with an orange circle */
+ Layer layer3 = {		/**<   layer w/ yellow T tile */
   (AbShape *)&ttile,
   {(screenWidth/2)+46, (screenHeight/2)+5}, /**< bit below & right of center */
   {0,0}, {0,0},				    /* last & next pos */
@@ -53,7 +52,7 @@ Layer layer4 = {
 };
 
 
-Layer layer2 = {		/**< Layer with an orange circle */
+Layer layer2 = {		/**< Violet L tile */
   (AbShape *)&ltile,
   {(screenWidth/2)+22, (screenHeight/2)+5}, /**< bit below & right of center */
   {0,0}, {0,0},				    /* last & next pos */
@@ -64,7 +63,7 @@ Layer layer2 = {		/**< Layer with an orange circle */
 
 
 
-Layer layer1 = {		/**< Layer with a red square */
+Layer layer1 = {		/**< layer w/ Red I Tile */
   (AbShape *)&itile,
   {(screenWidth/2)-2, screenHeight/2}, /**< center */
   {0,0}, {0,0},				    /* last & next pos */
@@ -72,7 +71,7 @@ Layer layer1 = {		/**< Layer with a red square */
   &layer2,
 };
 
-Layer layer0 = {		/**< Layer with an orange circle */
+Layer layer0 = {		/**< Layer with orange T tile */
   (AbShape *)&ttile,
   {(screenWidth/2)-26, (screenHeight/2)}, /**< bit below & right of center */
   {0,0}, {0,0},				    /* last & next pos */

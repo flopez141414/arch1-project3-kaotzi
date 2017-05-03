@@ -1,5 +1,5 @@
 /** \file lcddemo.c
- *  \brief A simple demo that draws a string and circle
+ *  \brief A simple demo that draws a string and circle -- or not
  */
 
 #include <libTimer.h>
@@ -7,13 +7,8 @@
 #include <lcddraw.h>
 #include <p2switches.h>
 #include <shape.h>
-//#include "shapedemo.c"
-//abDrawPos(AbShape *shape, Vec2 *shapeCenter, u_int fg_color, u_int bg_color);
+#include "p2sw-demo.h"
 
-extern int paddley;
-extern int covery;
-
-extern  int gamex;
 
 AbRect paddle = {abRectGetBounds, abRectCheck, {screenWidth/5, 5}};
 AbDiamond dball = {abDiamondGetBounds, abDiamondCheck, 15};
