@@ -1,5 +1,5 @@
-#ifndef p2sw-demo_included
-#define p2sw-demo_included
+#ifndef p2swdemo_included
+#define p2swdemo_included
 
 extern int paddley;
 extern int covery;
