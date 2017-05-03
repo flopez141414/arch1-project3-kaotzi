@@ -6,8 +6,8 @@ LDFLAGS		= -L../lib -L/opt/ti/msp430_gcc/include/
 
 #switch the compiler (for the internal make rules)
 CC              = msp430-elf-gcc
-AS              = msp430-elf-as
-AR              = msp430-elf-ar -mmcu=${CPU} -c
+AS              = msp430-elf-as -mmcu=${CPU} -c
+AR              = msp430-elf-ar 
 
 OBJECTS         = p2switches.o
 
@@ -24,14 +24,14 @@ install: libp2sw.a
 clean:
 	rm -f *.a *.o *.elf
 
-p2sw-demo.elf: p2sw-demo.o ../lib/libp2sw.a tiltscreen.o wdt_handler.o
-	$(CC) $(CFLAGS) ${LDFLAGS} -o $@ $^ -lLcd  -lTimer -lShape -lCircle
+p2sw-demo.elf: p2sw-demo.o  tiltscreen.o wdt_handler.o libp2sw.a 
+	$(CC) $(CFLAGS) ${LDFLAGS} -o $@ $^ -lLcd -lTimer -lShape -lCircle
 
-load: switch_demo.elf
+load: p2sw-demo.elf
 	mspdebug rf2500 "prog $^"
 
-shapemotion.elf: shapemotion.o ../lib/libp2sw.a tiltscreen.o wdt_handler.o
-	$(CC) $(CFLAGS) ${LDFLAGS} -o $@ $^ -lLcd  -lTimer -lShape -lCircle
+shapemotion.elf: shapemotion.o tiltscreen.o wdt_handler.o libp2sw.a 
+	$(CC) $(CFLAGS) ${LDFLAGS} -o $@ $^ -lLcd -lTimer -lShape -lCircle
 
 loadm: shapemotion.elf
 	mspdebug rf2500 "prog $^"
