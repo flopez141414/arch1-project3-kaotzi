@@ -1,4 +1,4 @@
-all: libShape.a shapedemo.elf shapedemo2.elf shapedemo3.elf
+all: libShape.a shapedemo.elf shapedemo2.elf shapedemo3.elf shapedemoT.elf shapedemoI.elf shapedemoL.elf shapedemoPong.elf
 
 CPU             = msp430g2553
 CFLAGS          = -mmcu=${CPU} -Os -I../h 
@@ -49,11 +49,11 @@ load2: shapedemo2.elf
 
 load3: shapedemo3.elf
 	mspdebug rf2500 "prog $^"
-loadt: shapedemoT.elf
+loadt: shapedemot.elf
 	mspdebug rf2500 "prog $^"
-loadi: shapedemoI.elf
+loadi: shapedemoi.elf
 	mspdebug rf2500 "prog $^"
-loadl: shapedemoL.elf
+loadl: shapedemol.elf
 	mspdebug rf2500 "prog $^"
 loadp: shapedemoPong.elf
 	mspdebug rf2500 "prog $^"

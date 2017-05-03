@@ -1,7 +1,9 @@
 #include <libTimer.h>
-#include "lcdutils.h"
-#include "lcddraw.h"
+#include <lcdutils.h>
+#include <lcddraw.h>
 #include "shape.h"
+#include <abCircle.h>
+
 
 //each letter is approx screenWidth/6 x screenHeight/4
 const AbRect rectp1 = {abRectGetBounds, abRectCheck, screenWidth/18,screenHeight/4};; //P leg
