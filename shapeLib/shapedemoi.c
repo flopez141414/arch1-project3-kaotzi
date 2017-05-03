@@ -3,7 +3,7 @@
 #include "lcddraw.h"
 #include "shape.h"
 
-AbTTile itile = {abITileGetBounds, abTTileCheck, 80}; //T tile
+AbITile itile = {abITileGetBounds, abITileCheck, 80}; //T tile
 
 void
 abDrawPos(AbShape *shape, Vec2 *shapeCenter, u_int fg_color, u_int bg_color)
