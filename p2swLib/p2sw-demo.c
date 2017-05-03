@@ -13,7 +13,7 @@ abDrawPos(AbShape *shape, Vec2 *shapeCenter, u_int fg_color, u_int bg_color);
 AbRect recttop = {abRectGetBounds, abRectCheck, {screenWidth,2}}; 
 AbRect rectside ={abRectGetBounds, abRectCheck, {2, screenHeight}};
 AbRect paddle = {abRectGetBounds, abRectCheck, {screenWidth/5, 8}};
-AbDiamond diamond = {abDiamondGetBounds, abDiamondCheck, 5};
+AbDiamond dball = {abDiamondGetBounds, abDiamondCheck, 5};
 
 /** Initializes everything, clears the screen, draws "hello" and the circle */
 void main()
@@ -31,11 +31,12 @@ void main()
    Vec2 rectPosl = { 3, screenHeight/2 };
    Vec2 rectPosr = { screenWidth-3, screenHeight/2 };
    Vec2 padPos = { screenWidth/2, screenHeight-3 };
+   Vec2 balPos = { centerScreen };
   abDrawPos((abShape*)&recttop, &rectPost, COLOR_BLACK, COLOR_BLUE);
   abDrawPos((abShape*)&rectside, &rectPosl, COLOR_BLACK, COLOR_BLUE);
   abDrawPos((abShape*)&rectside, &rectPosr, COLOR_BLACK, COLOR_BLUE);
   abDrawPos((abShape*)&paddle, &padPos, COLOR_BLACK, COLOR_BLUE);
-  
+  abDrawPos((abShape*)&dball, &balPos, COLOR_BLACK, COLOR_BLUE);
   
   drawString5x7(10,10, "switches:", COLOR_GREEN, COLOR_BLUE);
   while (1) {
