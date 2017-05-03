@@ -18,63 +18,50 @@
 
 
 AbRect rect10 = {abRectGetBounds, abRectCheck, {10,10}}; /**< 10x10 rectangle */
-AbDiamond diamond = {abDiamondGetBounds, abDiamondCheck, 80};
-AbTTile ttile = {abTTileGetBounds, abTTileCheck, 10}; //T tile
-AbITile itile = {abITileGetBounds, abITileCheck, 10}; //I tile
-AbLTile ltile = {abLTileGetBounds, abLTileCheck, 10}; //L tile
+AbDiamond diamond = {abDiamondGetBounds, abDiamondCheck, 30};
 
 AbRectOutline fieldOutline = {	/* playing field */
   abRectOutlineGetBounds, abRectOutlineCheck,   
   {screenWidth/2 - 10, screenHeight/2 - 10}
 };
 
+Layer layer4 = {
+  (AbShape *)&diamond,
+  {(screenWidth/2)+10, (screenHeight/2)+5}, /**< bit below & right of center */
+  {0,0}, {0,0},				    /* last & next pos */
+  COLOR_PINK,
+  0
+};
+  
+
+Layer layer3 = {		/**< Layer with an orange circle */
+  (AbShape *)&circle8,
+  {(screenWidth/2)+10, (screenHeight/2)+5}, /**< bit below & right of center */
+  {0,0}, {0,0},				    /* last & next pos */
+  COLOR_VIOLET,
+  &layer4,
+};
+
+
 Layer fieldLayer = {		/* playing field as a layer */
   (AbShape *) &fieldOutline,
   {screenWidth/2, screenHeight/2},/**< center */
   {0,0}, {0,0},				    /* last & next pos */
   COLOR_BLACK,
-  0
+  &layer3
 };
-
-Layer layer4 = {
-  (AbShape *)&diamond,
-  {(screenWidth/2)+40, (screenHeight/2)+5}, /**< bit below & right of center */
-  {0,0}, {0,0},				    /* last & next pos */
-  COLOR_PINK,
-  &fieldLayer,
-};
-  
- Layer layer3 = {		/**< Layer with an orange circle */
-  (AbShape *)&ttile,
-  {(screenWidth/2)+46, (screenHeight/2)+5}, /**< bit below & right of center */
-  {0,0}, {0,0},				    /* last & next pos */
-  COLOR_YELLOW,
-  &layer4,
-};
-
-
-Layer layer2 = {		/**< Layer with an orange circle */
-  (AbShape *)&ltile,
-  {(screenWidth/2)+22, (screenHeight/2)+5}, /**< bit below & right of center */
-  {0,0}, {0,0},				    /* last & next pos */
-  COLOR_VIOLET,
-  &layer3,
-};
-
-
-
 
 Layer layer1 = {		/**< Layer with a red square */
-  (AbShape *)&itile,
-  {(screenWidth/2)-2, screenHeight/2}, /**< center */
+  (AbShape *)&rect10,
+  {screenWidth/2, screenHeight/2}, /**< center */
   {0,0}, {0,0},				    /* last & next pos */
   COLOR_RED,
-  &layer2,
+  &fieldLayer,
 };
 
 Layer layer0 = {		/**< Layer with an orange circle */
-  (AbShape *)&ttile,
-  {(screenWidth/2)-26, (screenHeight/2)}, /**< bit below & right of center */
+  (AbShape *)&circle14,
+  {(screenWidth/2)+10, (screenHeight/2)+5}, /**< bit below & right of center */
   {0,0}, {0,0},				    /* last & next pos */
   COLOR_ORANGE,
   &layer1,
@@ -170,7 +157,7 @@ Region fieldFence;		/**< fence around playing field  */
 /** Initializes everything, enables interrupts and green LED, 
  *  and handles the rendering for the screen
  */
-void main()
+void tilt_screen()
 {
   P1DIR |= GREEN_LED;		/**< Green led on when CPU on */		
   P1OUT |= GREEN_LED;
