@@ -5,9 +5,17 @@
  *  While the CPU is running the green LED is on, and
  *  when the screen does not need to be redrawn the CPU
  *  is turned off along with the green LED.
- * 
+ */  
+#include <msp430.h>
+#include <libTimer.h>
+#include <lcdutils.h>
+#include <lcddraw.h>
+#include <p2switches.h>
+#include <shape.h>
+#include <abCircle.h>
 
- */ 
+#define GREEN_LED BIT6
+
 
 AbDiamond diamond = {abDiamondGetBounds, abDiamondCheck, 80};
 AbTTile ttile = {abTTileGetBounds, abTTileCheck, 20}; //T tile
