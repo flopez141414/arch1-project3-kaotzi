@@ -61,7 +61,7 @@ main()
   
   //testing TILT
   //shapeInit();
-  abDrawPos((AbShape*)&rectp1, &p1Pos2, COLOR_YELLOW, COLOR_BLUE); // P leg
+  abDrawPos((AbShape*)&rectp1, &p1Pos, COLOR_YELLOW, COLOR_BLUE); // P leg
   abDrawPos((AbShape*)&rectn1, &n1Pos, COLOR_ORANGE, COLOR_BLUE);
   //shapeInit();
   abDrawPos((AbShape*)&circle8, &p2Pos, COLOR_RED, COLOR_BLUE);
