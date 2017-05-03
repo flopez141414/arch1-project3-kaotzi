@@ -7,7 +7,7 @@
 
 //each letter is approx screenWidth/6 x screenHeight/4
 const AbRect rectp1 = {abRectGetBounds, abRectCheck, screenWidth/18,screenHeight/4};; //P leg
-const AbRect rectn1 = {abRectGetBounds, abRectCheck, screenWidth/6,ScreenHeight/9};; //N base
+const AbRect rectn1 = {abRectGetBounds, abRectCheck, screenWidth/6,screenHeight/9};; //N base
 
 void
 abDrawPos(AbShape *shape, Vec2 *shapeCenter, u_int fg_color, u_int bg_color)
@@ -62,9 +62,9 @@ main()
   //testing TILT
   //shapeInit();
   abDrawPos((AbShape*)&rectp1, &p1Pos, COLOR_YELLOW, COLOR_BLUE); // P leg
-  abDrawPos((AbShape*)&rectn1, &n1Pos, COLOR_ORANGE, COLOR_BLUE);
+  abDrawPos((AbShape*)&rectn1, &n1Pos, COLOR_ORANGE, COLOR_BLUE); // n base
   //shapeInit();
-  abDrawPos((AbShape*)&circle8, &p2Pos, COLOR_RED, COLOR_BLUE);
+  abDrawPos((AbShape*)&circle8, &p2Pos, COLOR_RED, COLOR_BLUE);  // P top
   /*shapeInit();
   abDrawPos((AbShape*)&itile, &iPos, COLOR_YELLOW, COLOR_BLUE);
   shapeInit();

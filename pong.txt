@@ -1,0 +1,12 @@
+Pong game  by Thomas George
+
+assembler state machine has:
+startup ... w/pongstr_screen()
+instructions ... w/ instr_screen()
+play ... w/ play()
+gameover ... w/winner_screen()
+tilt ... w/ tilt_screen()
+
+Tilt is a game interupting function controlled by the lower button off P1.3. It will interupt the game.
+(and give out points & restart the ball) or (and end the game ... tie screen?)
+
