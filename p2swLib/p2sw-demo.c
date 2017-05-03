@@ -58,8 +58,8 @@ void main()
 
 
 void move_bar (int dist)
-{
-  if ((paddley - dist) > (screenHeight+7)){
+{ dist=dist+5;  //more visible change
+  if ((paddley - dist) > (screenHeight/2 + 7)){
       covery=paddley;
       paddley= paddley-dist;
       Vec2 padPosUp={gamex, paddley};
