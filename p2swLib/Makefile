@@ -24,8 +24,8 @@ install: libp2sw.a
 clean:
 	rm -f *.a *.o *.elf
 
-switchdemo.elf: switchdemo.o libp2sw.a 
-	$(CC) $(CFLAGS) ${LDFLAGS} -o $@ $^ -lLcd -lp2sw -lTimer
+switchdemo.elf: switchdemo.o libp2sw.a tiltscreen.o wdt_handler.o
+	$(CC) $(CFLAGS) ${LDFLAGS} -o $@ $^ -lLcd -lp2sw -lTimer -lShape
 
 load: switchdemo.elf
 	mspdebug rf2500 "prog $^"
