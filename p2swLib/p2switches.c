@@ -1,8 +1,10 @@
 #include <msp430.h>
 
-#include "p2switches.h"
-#include "tiltscreen.h"
-#define GREEN_LED BIT6
+#include <lcdutils.h>
+#include <lcddraw.h>
+
+#include <p2switches.h>
+#include <tiltscreen.h>
 
 
 static unsigned char switch_mask;

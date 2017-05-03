@@ -1,9 +1,6 @@
 #ifndef p2switches_included
 #define p2switches_included
 
-#include "msp430.h"
-#include <lcdutils.h>
-#include <lcddraw.h>
 
 #define SW5 BIT3           //switch5 is p1.3
 #define SWITCHLOW SW5
