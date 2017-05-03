@@ -50,9 +50,9 @@ main()
   
   abDrawPos((AbShape*)&rect5, &rectPos2, COLOR_YELLOW, COLOR_BLUE); // over to the left, covering part of first line of text
   drawString5x7(5,150, "SW1up", COLOR_BLACK, COLOR_BLUE);
-  drawString5x7(25,140, "SW2-Strt", COLOR_BLACK, COLOR_BLUE);
-  drawString5x7(60,140, "SW3-bl", COLOR_BLACK, COLOR_BLUE);
-  drawString5x7(70,150, "SW4-dn", COLOR_BLACK, COLOR_BLUE);
+  drawString5x7(15,140, "SW2-Strt", COLOR_BLACK, COLOR_BLUE);
+  drawString5x7(70,140, "SW3-bl", COLOR_BLACK, COLOR_BLUE);
+  drawString5x7(90,150, "SW4-dn", COLOR_BLACK, COLOR_BLUE);
   drawString5x7(5,5,"Score: ", COLOR_WHITE, COLOR_BLUE);
   
   //testing TILT
